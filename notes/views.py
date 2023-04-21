@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView, TemplateView
 from django.urls import reverse_lazy
 from .models import Note
 
@@ -30,3 +30,6 @@ class NoteDeleteView(DeleteView):
     model = Note
     template_name = 'note_delete.html'
     success_url = reverse_lazy('note_list')
+
+class OfferHeaderView(TemplateView):
+    template_name = 'dance_studio.html'  
