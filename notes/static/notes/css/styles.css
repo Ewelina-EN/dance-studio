@@ -1,3 +1,454 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background: yellow;
+  background-color: black;
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+
+/* navigation */
+/* TODO: ikony FB i Inst zrobic jedno pod drugin dla urzadzen mobilnych */
+
+.navigation {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  padding: 20px 10px;
+}
+
+.navigation .mainMenu {
+  height: 80%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  transition: top 1s ease 0s;
+  display: none;
+  list-style: none;
+}
+
+.navigation .mainMenu li a {
+  display: inline-block;
+  padding: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  transition: 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navigation .openMenu {
+  display: block;
+  font-size: 25px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.navigation .mainMenu .closeMenu,
+.icons i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.navigation .mainMenu .closeMenu {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.navigation .mainMenu li a:hover {
+  background: none;
+  border-bottom: 2px solid rgb(139, 139, 139);
+}
+
+.icons i {
+  display: inline-block;
+  padding: 50px 25px 0 25px;
+  font-size: 25px;
+}
+
+.navigation.logo {
+  margin: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.line {
+  width: 80%;
+  height: 1px;
+  margin: 50px auto;
+  background-color: white;
+}
+
+/* big video */
+.header-video {
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.offer ul li {
+  list-style: none;
+  text-align: center;
+  margin: 20px;
+}
+
+.offer ul li img {
+  border-radius: 50%;
+  border: 3px solid rgb(187, 187, 187);
+  width: 90px;
+  margin: 20px 0;
+}
+
+.offer ul li h4 {
+  font-weight: 400;
+}
+
+.offer ul li p {
+  margin: 10px 50px;
+  font-weight: 300;
+  color: rgb(184, 184, 184);
+  margin: 20px;
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
+.videos p {
+  text-align: center;
+  font-weight: 200;
+  margin: 20px 30px;
+}
+
+.instructors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.instructors ul {
+  width: 90%;
+}
+
+.instructors ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.instructors ul li img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.instructors ul li div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.instructors ul li div h2 {
+  font-size: 20px;
+}
+
+.instructors ul li div p {
+  text-align: center;
+  font-weight: 200;
+  margin: 20px 30px;
+}
+
+.instructors ul li div button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 15px 25px;
+  font-size: 15px;
+  margin: 15px auto;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prices ul {
+  width: 75%;
+}
+
+.prices ul li {
+  list-style: none;
+  border: 1px solid rgb(163, 163, 163);
+  margin: 20px 0;
+  text-align: center;
+  min-height: 350px;
+}
+
+.prices ul li:last-child {
+  margin-bottom: 0;
+}
+
+.prices ul li h2 {
+  margin: 30px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.prices ul li p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: 0.3px;
+  margin-top: 30px;
+}
+
+.prices ul li p:last-child {
+  font-size: 40px;
+  font-weight: 500;
+  /* margin-top: 30px; */
+}
+
+.lessons {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.lessons h2 {
+  font-weight: 400;
+}
+
+/* .lessons p {
+  margin-top: 20px;
+  font-weight: 200;
+  font-size: 15px;
+  letter-spacing: 1px;
+} */
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border-bottom: 1px solid white;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-footer ul li {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-footer h2 {
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 10px 0;
+}
+
+.social {
+  margin-top: 15px;
+}
+
+.author {
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+  .navigation .openMenu {
+    display: none;
+  }
+  .navigation .mainMenu .closeMenu {
+    display: none;
+  }
+
+  .navigation {
+    margin: 20px 0 0 0;
+    padding: 15px 0;
+  }
+
+  .navigation .mainMenu {
+    display: flex;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+  }
+
+  .navigation .mainMenu li a {
+    padding: 15px;
+    letter-spacing: 0;
+  }
+  .icons i {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .header-video {
+    height: 500px;
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .line {
+    width: 80%;
+    height: 1px;
+    margin: 80px auto;
+    background-color: white;
+  }
+
+  .offer {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .offer h1 {
+    margin: 30px 0;
+  }
+
+  .offer ul {
+    display: flex;
+    margin: 50px auto;
+  }
+
+  .offer ul li {
+    margin: 0 15px;
+  }
+
+  .offer ul li p {
+    margin: 10px;
+  }
+
+  .videos h1 {
+    margin-bottom: 25px;
+  }
+
+  .videos p {
+    margin: 5px;
+    width: 70%;
+  }
+
+  .instructors ul li {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .instructors ul li:nth-child(n + 3):nth-child(-n + 4) {
+    flex-direction: row-reverse;
+  }
+
+  .instructors ul li img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .instructors ul li div h2 {
+    font-size: 25px;
+  }
+
+  .prices ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .prices ul:last-child {
+    justify-content: space-evenly;
+  }
+
+  .prices ul li {
+    padding: 10px 20px;
+  }
+
+  .prices ul li:last-child {
+    margin-top: 0;
+  }
+
+  .text {
+    font-size: 40px;
+    margin: 80px 0 0 0;
+    padding-bottom: 80px;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  .nav-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    /* margin: 0 50px; */
+  }
+
+  .nav-footer nav {
+    width: 70%;
+  }
+
+  .nav-footer nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: left;
+    width: 70%;
+  }
 }
