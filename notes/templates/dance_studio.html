@@ -19,292 +19,315 @@
             <li>
                 <div class='closeMenu'><i class='fa fa-times'></i></div>
                 <span class='icons'>
-                    <i class='fa fa-facebook'></i>
-                    <i class='fa fa-instagram'></i>
+                    <a href="https://www.facebook.com/chernikadance"><i class='fa fa-facebook'></i></a>
+                    <a href="https://www.instagram.com/chernika_studio.pl/"><i class='fa fa-instagram'></i></a>
                 </span>
             </li>
         </ul>
     </nav>
 </header>
 
+<body>
+    <main>
+        <!-- main video -->
+        <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
+            <source src="{% static 'notes/media/videos/pyta-winylowa-57307.mp4' %}" type="video/mp4">
+        </video>
 
-<main>
-    <!-- main video -->
-    <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
-        <source src="{% static 'notes/media/pyta-winylowa-57307.mp4' %}" type="video/mp4">
-    </video>
+        <hr class='line'>
 
-    <hr class='line'>
-
-    <!-- offer section -->
-    <section class='offer' id='offer'>
-        <h1>OFERTA</h1>
-        <ul>
-            <li>
-                <img src="{% static 'notes/media/strip.jpg' %}" alt="">
-                <h4>STRIP DANCE</h4>
-                <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/strip.jpg' %}" alt="">
-                <h4>HIGH HEELS</h4>
-                <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/strip.jpg' %}" alt="">
-                <h4>STRIP AKROBATYKA</h4>
-                <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <img src="{% static 'notes/media/strip.jpg' %}" alt="">
-                <h4>FEMALE DANCE</h4>
-                <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/strip.jpg' %}" alt="">
-                <h4>HIP HOP</h4>
-                <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/strip.jpg' %}" alt="">
-                <h4>STRETCHING</h4>
-                <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-            </li>
-        </ul>
-    </section>
-
-    <hr class='line'>
-
-    <!-- classes video section -->
-    <section class='videos' id='videos'>
-        <h1>ZAPRASZAMY DO ŚWIATA TAŃCA</h1>
-        <p>Naucz się kroków tanecznych i rozwijaj swoje umiejętności dzięki regularnym zajęciom tanecznym.</p>
-        <p>Nie ważne, czy jesteś początkującym tancerzem czy już masz doświadczenie - nasze zajęcia są dla Ciebie!
-            Obejrzyj video z układami tanecznymi, które uczymy i dołącz do nas!</p>
-        <div>
-            <video src=""></video>
-            <video src=""></video>
-            <video src=""></video>
-        </div>
-    </section>
-
-    <hr class='line'>
-
-    <!-- workshops video section -->
-    <section class='videos'>
-        <h1>WARSZTATY</h1>
-        <p>Ucz się i odkrywaj różnorodność stylów tanecznych na warsztatach.</p>
-        <div>
-            <video src=""></video>
-            <video src=""></video>
-            <video src=""></video>
-        </div>
-    </section>
-
-    <hr class='line'>
-
-    <!-- instructors section-->
-    <section class='instructors' id='instructors'>
-        <h1>TRENERZY</h1>
-        <ul>
-            <li>
-                <img src="{% static 'notes/media/instructors/pola.jpg' %}" alt="">
-                <div>
-                    <h2>IMIĘ I NAZWISKO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</p>
-                    <button
-                        onclick="window.location.href='https://www.instagram.com/anna.solokhina1/'">INSTAGRAM</button>
-
-                </div>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/instructors/ania.jpg' %}" alt="">
-                <div>
-                    <h2>IMIĘ I NAZWISKO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</p>
-                    <button
-                        onclick="window.location.href='https://www.instagram.com/polaszczepanska/'">INSTAGRAM</button>
-                </div>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/instructors/oskar.jpg' %}" alt="">
-                <div>
-                    <h2>IMIĘ I NAZWISKO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</p>
-                    <button
-                        onclick="window.location.href='https://www.instagram.com/oskarlitorowicz/'">INSTAGRAM</button>
-                </div>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/instructors/juliawywial.jpg' %}" alt="">
-                <div>
-                    <h2>IMIĘ I NAZWISKO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</p>
-                    <button onclick="window.location.href='https://www.instagram.com/julia.wywial/'">INSTAGRAM</button>
-                </div>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/instructors/yuliia.jpg' %}" alt="">
-                <div>
-                    <h2>IMIĘ I NAZWISKO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</p>
-                    <button
-                        onclick="window.location.href='https://www.instagram.com/chernika_dance_/'">INSTAGRAM</button>
-                </div>
-            </li>
-            <li>
-                <img src="{% static 'notes/media/instructors/anzhelika.jpg' %}" alt="">
-                <div>
-                    <h2>IMIĘ I NAZWISKO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</p>
-                    <button onclick="window.location.href='https://www.instagram.com'">INSTAGRAM</button>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <hr class='line'>
-
-    <!-- prices section -->
-    <section class='prices' id='prices'>
-        <h1>CENNIK</h1>
-        <section class='prices-main'>
-            <ul class='prices-main-list'>
-                <li class='prices-list'>
-                    <h2>KARNET 4 WEJŚĆ</h2>
-                    <ul class='prices-info'>
-                        <li>zajęcia 1xw tygodniu</li>
-                        <li>zajęcia trwają 60 minut</li>
-                        <li>zajęcia z instruktorem w grupie</li>
-                        <li>karnet ważny 30 dni, od dnia nabycia</li>
-                    </ul>
-                    <p>150zł</p>
+        <!-- offer section -->
+        <section class='offer' id='offer'>
+            <h1>OFERTA</h1>
+            <ul>
+                <li>
+                    <img src="" alt="">
+                    <h4>STRIP DANCE</h4>
+                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
                 </li>
-                <li class='prices-list'>
-                    <h2>KARNET 8 WEJŚĆ</h2>
-                    <ul class='prices-info'>
-                        <li>zajęcia 2xw tygodniu</li>
-                        <li>zajęcia trwają 60 minut</li>
-                        <li>zajęcia z instruktorem w grupie</li>
-                        <li>karnet ważny 30 dni, od dnia nabycia</li>
-                    </ul>
-                    <p>250zł</p>
+                <li>
+                    <img src="" alt="">
+                    <h4>HIGH HEELS</h4>
+                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
                 </li>
-                <li class='prices-list'>
-                    <h2>KARNET 12 WEJŚĆ</h2>
-                    <ul class='prices-info'>
-                        <li>zajęcia 3xw tygodniu</li>
-                        <li>zajęcia trwają 60 minut</li>
-                        <li>zajęcia z instruktorem w grupie</li>
-                        <li>karnet ważny 30 dni, od dnia nabycia</li>
-                    </ul>
-                    <p>350zł</p>
+                <li>
+                    <img src="" alt="">
+                    <h4>STRIP AKROBATYKA</h4>
+                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
                 </li>
-                <li class='prices-list'>
-                    <h2>PAKIET VIP</h2>
-                    <ul class='prices-info'>
-                        <li>nielimitowany dostęp</li>
-                        <li>zajęcia trwają 60 minut</li>
-                        <li>zajęcia z instruktorem w grupie</li>
-                        <li>karnet ważny 30 dni, od dnia nabycia</li>
-                    </ul>
-                    <p>450zł</p>
+            </ul>
+            <ul>
+                <li>
+                    <img src="" alt="">
+                    <h4>FEMALE DANCE</h4>
+                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
                 </li>
-                <li class='prices-list'>
-                    <h2>POJEDYNCZE WEJŚCIE</h2>
-                    <ul class='prices-info'>
-                        <li>jednorazowe wejście na wybrane zajęcia</li>
-                        <li>zajęcia trwają 60 minut</li>
-                        <li>zajęcia z instruktorem w grupie</li>
-                    </ul>
-                    <p>50zł</p>
+                <li>
+                    <img src="" alt="">
+                    <h4>HIP HOP</h4>
+                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
                 </li>
-                <li class='prices-list'>
-                    <h2>ZAJĘCIA INDYWIDUALNE</h2>
-                    <p class='prices-list-text'>Doskonała okazja, aby dopasować trening do Twoich potrzeb.
-                        Osiągnij
-                        swoje
-                        cele treningowe szybciej!</p>
-                    <p>Cena</p>
+                <li>
+                    <img src="" alt="">
+                    <h4>STRETCHING</h4>
+                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
                 </li>
             </ul>
         </section>
-    </section>
-    <!-- dance space to rental -->
-    <div class='lessons'>
-        <h2>OFERTA WYNAJMU SALI</h2>
-        <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
-            Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
-            Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy przestronną salę z
-            drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z profesjonalnym
-            nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne, treningi,
-            próby i
-            inne.
-        </p>
-        <p>Jeśli szukasz sali, by
-            poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"><strong>NAPISZ DO
-                    NAS</strong></a> lub <a href="tel:+48790318971"><strong>ZADZWOŃ</strong></a></p>
-    </div>
-    <hr class='line'>
-    <!-- short text -->
-    <div class='text'>
-        <p>Odkryj przyjemność z tańca.</p>
-        <p>DOŁĄCZ DO NAS!</p>
-    </div>
-</main>
-<footer id='contact'>
-    <div class='nav-footer'>
-        <nav>
+
+        <hr class='line'>
+
+        <!-- classes video section -->
+        <section class='videos' id='videos'>
+            <h1>ZAPRASZAMY DO ŚWIATA TAŃCA</h1>
+            <p>Naucz się kroków tanecznych i rozwijaj swoje umiejętności dzięki regularnym zajęciom tanecznym.</p>
+            <p>Nie ważne, czy jesteś początkującym tancerzem czy już masz doświadczenie - nasze zajęcia są dla Ciebie!
+                Obejrzyj video z układami tanecznymi, które uczymy i dołącz do nas!</p>
+            <div class='movies'>
+                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe><iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe><iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <hr class='line'>
+
+        <!-- workshops video section -->
+        <section class='videos'>
+            <h1>WARSZTATY</h1>
+            <p>Ucz się i odkrywaj różnorodność stylów tanecznych na warsztatach.</p>
+            <div class='movies'>
+                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                    web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                    web-share"
+                    allowfullscreen></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                    web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <hr class='line'>
+
+        <!-- instructors section-->
+        <section class='instructors' id='instructors'>
+            <h1>TRENERZY</h1>
             <ul>
-                <li><img src="{% static 'notes/media/icons/icons8-location-96.png' %}" alt="">
-                    <h3>Adres</h3>
-                    <p>Rynek 31/32 <br> 50-121 Wrocław</p>
+                <li>
+                    <img src="{% static 'notes/media/instructors/pola.jpg' %}" alt="">
+                    <div>
+                        <h2>IMIĘ I NAZWISKO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat.</p>
+                        <button
+                            onclick="window.location.href='https://www.instagram.com/anna.solokhina1/'">INSTAGRAM</button>
+
+                    </div>
                 </li>
                 <li>
-                    <img src="{% static 'notes/media/icons/icons8-phone-90.png' %}" alt="">
-                    <h3>Telefon</h3>
-                    <p> <a href="tel:+48790318971">790 318 971</a></p>
+                    <img src="{% static 'notes/media/instructors/ania.jpg' %}" alt="">
+                    <div>
+                        <h2>IMIĘ I NAZWISKO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat.</p>
+                        <button
+                            onclick="window.location.href='https://www.instagram.com/polaszczepanska/'">INSTAGRAM</button>
+                    </div>
                 </li>
-                <li><img src="{% static 'notes/media/icons/icons8-email-send-90.png' %}" style='color:aliceblue' alt="">
-                    <h3>E-mail</h3>
-                    <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio@gmail.com</a>
+                <li>
+                    <img src="{% static 'notes/media/instructors/oskar.jpg' %}" alt="">
+                    <div>
+                        <h2>IMIĘ I NAZWISKO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat.</p>
+                        <button
+                            onclick="window.location.href='https://www.instagram.com/oskarlitorowicz/'">INSTAGRAM</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static 'notes/media/instructors/juliawywial.jpg' %}" alt="">
+                    <div>
+                        <h2>IMIĘ I NAZWISKO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat.</p>
+                        <button
+                            onclick="window.location.href='https://www.instagram.com/julia.wywial/'">INSTAGRAM</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static 'notes/media/instructors/yuliia.jpg' %}" alt="">
+                    <div>
+                        <h2>IMIĘ I NAZWISKO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat.</p>
+                        <button
+                            onclick="window.location.href='https://www.instagram.com/chernika_dance_/'">INSTAGRAM</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static 'notes/media/instructors/anzhelika.jpg' %}" alt="">
+                    <div>
+                        <h2>IMIĘ I NAZWISKO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                            commodo consequat.</p>
+                        <button onclick="window.location.href='https://www.instagram.com'">INSTAGRAM</button>
+                    </div>
                 </li>
             </ul>
-        </nav>
-        <div class='social'>
-            <h2>Bądź na bieżąco!</h2>
-            <a href="https://www.facebook.com/chernikadance"><img
-                    src="{% static 'notes/media/icons/icons8-facebook-96.png' %}" alt=""></a>
-            <a href="https://www.instagram.com/chernika_studio.pl/"><img
-                    src="{% static 'notes/media/icons/icons8-instagram-96.png' %}" alt=""></a>
+        </section>
+
+        <hr class='line'>
+
+        <!-- prices section -->
+        <section class='prices' id='prices'>
+            <h1>CENNIK</h1>
+            <section class='prices-main'>
+                <ul class='prices-main-list'>
+                    <li class='prices-list'>
+                        <h2>KARNET 4 WEJŚĆ</h2>
+                        <ul class='prices-info'>
+                            <li>zajęcia 1xw tygodniu</li>
+                            <li>zajęcia trwają 60 minut</li>
+                            <li>zajęcia z instruktorem w grupie</li>
+                            <li>karnet ważny 30 dni, od dnia nabycia</li>
+                        </ul>
+                        <p>150zł</p>
+                    </li>
+                    <li class='prices-list'>
+                        <h2>KARNET 8 WEJŚĆ</h2>
+                        <ul class='prices-info'>
+                            <li>zajęcia 2xw tygodniu</li>
+                            <li>zajęcia trwają 60 minut</li>
+                            <li>zajęcia z instruktorem w grupie</li>
+                            <li>karnet ważny 30 dni, od dnia nabycia</li>
+                        </ul>
+                        <p>250zł</p>
+                    </li>
+                    <li class='prices-list'>
+                        <h2>KARNET 12 WEJŚĆ</h2>
+                        <ul class='prices-info'>
+                            <li>zajęcia 3xw tygodniu</li>
+                            <li>zajęcia trwają 60 minut</li>
+                            <li>zajęcia z instruktorem w grupie</li>
+                            <li>karnet ważny 30 dni, od dnia nabycia</li>
+                        </ul>
+                        <p>350zł</p>
+                    </li>
+                    <li class='prices-list'>
+                        <h2>PAKIET VIP</h2>
+                        <ul class='prices-info'>
+                            <li>nielimitowany dostęp</li>
+                            <li>zajęcia trwają 60 minut</li>
+                            <li>zajęcia z instruktorem w grupie</li>
+                            <li>karnet ważny 30 dni, od dnia nabycia</li>
+                        </ul>
+                        <p>450zł</p>
+                    </li>
+                    <li class='prices-list'>
+                        <h2>POJEDYNCZE WEJŚCIE</h2>
+                        <ul class='prices-info'>
+                            <li>jednorazowe wejście na wybrane zajęcia</li>
+                            <li>zajęcia trwają 60 minut</li>
+                            <li>zajęcia z instruktorem w grupie</li>
+                        </ul>
+                        <p>50zł</p>
+                    </li>
+                    <li class='prices-list'>
+                        <h2>ZAJĘCIA INDYWIDUALNE</h2>
+                        <p class='prices-list-text'>Doskonała okazja, aby dopasować trening do Twoich potrzeb.
+                            Osiągnij
+                            swoje
+                            cele treningowe szybciej!</p>
+                        <p>Cena</p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <!-- dance space to rental -->
+        <div class='lessons'>
+            <h2>OFERTA WYNAJMU SALI</h2>
+            <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
+                Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
+                Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy przestronną
+                salę z
+                drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z profesjonalnym
+                nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne, treningi,
+                próby i
+                inne.
+            </p>
+            <p>Jeśli szukasz sali, by
+                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"><strong>NAPISZ DO
+                        NAS</strong></a> lub <a href="tel:+48790318971"><strong>ZADZWOŃ</strong></a></p>
         </div>
-    </div>
-    <div class='author'>
-        <p>Copyright © 2023
-            <a href="">by Ostańscy ||</a>
-            <a target="_blank" href="https://icons8.com/">App</a> icon by <a target="_blank"
-                href="https://icons8.com">Icons8</a>
-        </p>
-    </div>
-</footer>
+        <hr class='line'>
+        <!-- short text -->
+        <div class='text'>
+            <p>Odkryj przyjemność z tańca.</p>
+            <p>DOŁĄCZ DO NAS!</p>
+        </div>
+    </main>
+    <footer id='contact'>
+        <div class='nav-footer'>
+            <nav>
+                <ul>
+                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <h3>Adres</h3>
+                        <p>Rynek 31/32 <br> 50-121 Wrocław</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Telefon</h3>
+                        <p> <a href="tel:+48790318971">790 318 971</a></p>
+                    </li>
+                    <li><i class="fa-solid fa-envelope"></i>
+                        <h3>E-mail</h3>
+                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio@gmail.com</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class='social'>
+                <h2>Bądź na bieżąco!</h2>
+                <span class='icons'>
+                    <a href="https://www.facebook.com/chernikadance"><i class='fa fa-facebook'></i></a>
+                    <a href="https://www.instagram.com/chernika_studio.pl/"><i class='fa fa-instagram'></i></a>
+                </span>
+            </div>
+        </div>
+        <div class='author'>
+            <p>Copyright © 2023
+                <a href="">by Ostańscy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
 {% endblock %}

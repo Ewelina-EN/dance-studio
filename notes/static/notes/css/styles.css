@@ -87,6 +87,7 @@ header {
   display: inline-block;
   padding: 50px 25px 0 25px;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .navigation .logo {
@@ -164,6 +165,17 @@ h1 {
   color: rgb(184, 184, 184);
 }
 
+iframe {
+  width: 250px;
+  height: 470px;
+  border: none;
+  margin: 10px;
+}
+
+.movies {
+  margin: 20px 0;
+}
+
 .instructors {
   display: flex;
   flex-direction: column;
@@ -214,6 +226,7 @@ h1 {
   padding: 15px 25px;
   font-size: 15px;
   margin: 15px auto;
+  cursor: pointer;
 }
 
 .instructors ul li div button:hover {
@@ -309,7 +322,6 @@ h1 {
   color: white;
   font-size: 20px;
   margin-top: 25px;
-  font-weight: 300px;
 }
 
 .lessons a {
@@ -360,6 +372,7 @@ h1 {
 .social {
   text-align: center;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .social img {
@@ -388,7 +401,7 @@ h1 {
   }
 
   header {
-    padding: 10px 40px;
+    padding: 10px 30px;
   }
 
   .logo img {
@@ -411,7 +424,6 @@ h1 {
   }
 
   .navigation .mainMenu li a {
-    padding: 15px;
     letter-spacing: 0;
     font-size: 17px;
   }
@@ -443,6 +455,10 @@ h1 {
     margin: 30px 0;
   }
 
+  .offer h4 {
+    font-size: 20px;
+  }
+
   .offer ul {
     display: flex;
     flex-direction: row;
@@ -451,12 +467,9 @@ h1 {
     width: 100%;
   }
 
-  .offer ul li {
-    margin: 0 25px;
-  }
-
   .offer ul li p {
     margin: 10px;
+    font-size: 17px;
   }
 
   .videos h1 {
@@ -464,6 +477,7 @@ h1 {
   }
 
   .videos p {
+    font-size: 20px;
     margin: 5px;
     width: 70%;
   }
@@ -512,6 +526,7 @@ h1 {
 
   .instructors ul li div p {
     margin: 10px 20px;
+    font-size: 17px;
   }
 
   .prices {
@@ -534,6 +549,10 @@ h1 {
 
   .prices-list {
     margin: 0;
+  }
+
+  .lessons p {
+    font-size: 18px;
   }
 
   .text {
@@ -626,12 +645,4 @@ h1 {
   .nav-footer {
     justify-content: space-between;
   }
-
-  /* .nav-footer ul {
-    width: 700px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-  } */
 }
