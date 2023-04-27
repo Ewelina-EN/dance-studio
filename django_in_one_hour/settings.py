@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 PROJECT_APPS = [
-    "notes"
+    "website"
 ]
 INSTALLED_APPS = [
     "django.contrib.admin",
