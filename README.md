@@ -18,3 +18,6 @@ pipenv install
 ./manage.py migrate
 ./manage.py createsuperuser # to tworrzy admina, zada pytania. Haslo jest generalnie dowolne, nie musi byc silne, bo tylko lokalnie.
 ./manage.py runserver
+
+Dokumentacja templatów:
+https://docs.djangoproject.com/en/4.2/ref/templates/language/
