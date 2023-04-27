@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "auditlog"
 ] + PROJECT_APPS
 
 MIDDLEWARE = [
@@ -49,7 +50,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'auditlog.middleware.AuditlogMiddleware',
 ]
+
+AUDITLOG_INCLUDE_ALL_MODELS=True
+
 
 ROOT_URLCONF = "django_in_one_hour.urls"
 

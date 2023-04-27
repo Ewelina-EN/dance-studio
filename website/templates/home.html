@@ -40,21 +40,14 @@
         <section class='offer' id='offer'>
             <h1>OFERTA</h1>
             <ul>
+                {% for offer in offers %}
                 <li>
                     <img src="" alt="">
-                    <h4>STRIP DANCE</h4>
-                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
+                    <h4>{{offer.title}}</h4>
+                    <p>{{offer.content}}</p>
                 </li>
-                <li>
-                    <img src="" alt="">
-                    <h4>HIGH HEELS</h4>
-                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-                </li>
-                <li>
-                    <img src="" alt="">
-                    <h4>STRIP AKROBATYKA</h4>
-                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-                </li>
+                {% endfor %}
+
             </ul>
             <ul>
                 <li>

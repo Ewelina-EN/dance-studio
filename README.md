@@ -10,3 +10,11 @@ python manage.py migrate
 python manage.py makemigrations
 
 https://tinyurl.com/django-ankieta
+
+# Aktualizacja strony
+
+git pull
+pipenv install
+./manage.py migrate
+./manage.py createsuperuser # to tworrzy admina, zada pytania. Haslo jest generalnie dowolne, nie musi byc silne, bo tylko lokalnie.
+./manage.py runserver

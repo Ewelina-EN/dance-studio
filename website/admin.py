@@ -2,9 +2,10 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-# from .models import Note
+from .models import Offer, BlockWithVideo, Trainer, Offer, ContactData, PriceList
 
-# admin.site.register(Note)
-# @admin.register(Note)
-# class NoteAdmin(admin.ModelAdmin):
-#     list_display = ['title', 'created_at', 'updated_at']
+admin.site.register(Offer)
+admin.site.register(BlockWithVideo)
+admin.site.register(Trainer)
+admin.site.register(ContactData)
+admin.site.register(PriceList)
