@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load thumbnail %}
 
 {% block content %}
 <!-- navigation -->
@@ -80,12 +81,15 @@
             <ul>
                 {% for trainer in trainers %}
                 <li>
-                    <img src="{{trainer.photo.url}}" alt="">
+                    {# skalowanie obrazków: https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #}
+                    {% thumbnail trainer.photo "200x200" as im %}
+                    <img src="{{im.url}}" alt=""> {# brakuje alt. Dodaj np. trainer.title #}
+                    {% endthumbnail %}
                     <div>
                         <h2>{{trainer.title}}</h2>
                         <p>{{trainer.content}}</p>
                         <a href='{{trainer.profile_url}}'>
-                            INTAGRAM</a>
+                            INSTAGRAM</a>
                     </div>
                 </li>
                 {% endfor %}
@@ -141,12 +145,11 @@
         <div class='nav-footer'>
             <nav>
                 <ul>
-                    {% for contactData in contact %}
+                     {# nie for, tutaj zrob po prostu contactData.title #}
                     <li><i class="fa-sharp fa-solid fa-location-dot"></i>
                         <h3>{{contactData.title}}</h3>
-                        <p>Rynek 31/32 <br> 50-121 Wrocław</p>
+                        <p>Rynek 31/32 {{contactData.address_1}} itp. <br> 50-121 Wrocław</p> 
                     </li>
-                    {% endfor %}
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <h3>Telefon</h3>
@@ -167,7 +170,7 @@
             </div>
         </div>
         <div class='author'>
-            <p>Copyright © 2023
+            <p>Copyright © {% now "Y"%}
                 <a href="">by Ostańscy</a>
             </p>
         </div>

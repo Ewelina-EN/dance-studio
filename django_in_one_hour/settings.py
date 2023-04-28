@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+project = lambda: os.path.dirname(os.path.realpath(__file__))  # noqa: E731
+location = lambda x: os.path.join(str(project()), str(x))  # noqa: E731
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,11 +31,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = "/media/"
+
 
 # Application definition
-PROJECT_APPS = [
-    "website"
-]
+PROJECT_APPS = ["website"]
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -39,7 +48,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "auditlog"
+    "auditlog",
+    'sorl.thumbnail',
 ] + PROJECT_APPS
 
 MIDDLEWARE = [
@@ -50,10 +60,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'auditlog.middleware.AuditlogMiddleware',
+    "auditlog.middleware.AuditlogMiddleware",
 ]
 
-AUDITLOG_INCLUDE_ALL_MODELS=True
+AUDITLOG_INCLUDE_ALL_MODELS = True
 
 
 ROOT_URLCONF = "django_in_one_hour.urls"
@@ -69,6 +79,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
             ],
         },
     },
@@ -123,6 +134,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATIC_ROOT = location(os.path.join("site_media", "static"))
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
