@@ -47,154 +47,48 @@
                     <p>{{offer.content}}</p>
                 </li>
                 {% endfor %}
-
             </ul>
-            <ul>
-                <li>
-                    <img src="" alt="">
-                    <h4>FEMALE DANCE</h4>
-                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-                </li>
-                <li>
-                    <img src="" alt="">
-                    <h4>HIP HOP</h4>
-                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-                </li>
-                <li>
-                    <img src="" alt="">
-                    <h4>STRETCHING</h4>
-                    <p>Opis zajęć do dodania. Treść - 2/3 krótkie zdania opisujące co to za zajęcia.</p>
-                </li>
-            </ul>
+            <!-- czy stworzyć 2 taki sam model czy jest inna opcja? -->
         </section>
 
         <hr class='line'>
 
         <!-- classes video section -->
+        {% for blockWithVideo in blocks_with_video %}
         <section class='videos' id='videos'>
-            <h1>ZAPRASZAMY DO ŚWIATA TAŃCA</h1>
-            <p>Naucz się kroków tanecznych i rozwijaj swoje umiejętności dzięki regularnym zajęciom tanecznym.</p>
-            <p>Nie ważne, czy jesteś początkującym tancerzem czy już masz doświadczenie - nasze zajęcia są dla Ciebie!
-                Obejrzyj video z układami tanecznymi, które uczymy i dołącz do nas!</p>
-            <div class='movies'>
-                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player"
+            <h1>{{blockWithVideo.title}}</h1>
+            <p>{{blockWithVideo.content}}</p>
+            <!-- <p>{{blockWithVideo.content_1}}</p> -->
+            <div>
+                <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" frameborder="0" title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe><iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c"
-                    title="YouTube video player"
+                    allowfullscreen></iframe>
+                <iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0" title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe><iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c"
-                    title="YouTube video player"
+                    allowfullscreen></iframe>
+                <iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0" title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
         </section>
-
         <hr class='line'>
-
-        <!-- workshops video section -->
-        <section class='videos'>
-            <h1>WARSZTATY</h1>
-            <p>Ucz się i odkrywaj różnorodność stylów tanecznych na warsztatach.</p>
-            <div class='movies'>
-                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player">
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
-                    web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player">
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
-                    web-share"
-                    allowfullscreen></iframe>
-                <iframe src="https://www.youtube-nocookie.com/embed/rgeTSarKZ8c" title="YouTube video player">
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
-                    web-share"
-                    allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <hr class='line'>
+        {% endfor %}
 
         <!-- instructors section-->
         <section class='instructors' id='instructors'>
             <h1>TRENERZY</h1>
             <ul>
+                {% for trainer in trainers %}
                 <li>
-                    <img src="{% static 'notes/media/instructors/pola.jpg' %}" alt="">
+                    <img src="{{trainer.photo.url}}" alt="">
                     <div>
-                        <h2>IMIĘ I NAZWISKO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea
-                            commodo consequat.</p>
-                        <button
-                            onclick="window.location.href='https://www.instagram.com/anna.solokhina1/'">INSTAGRAM</button>
-
+                        <h2>{{trainer.title}}</h2>
+                        <p>{{trainer.content}}</p>
+                        <a href='{{trainer.profile_url}}'>
+                            INTAGRAM</a>
                     </div>
                 </li>
-                <li>
-                    <img src="{% static 'notes/media/instructors/ania.jpg' %}" alt="">
-                    <div>
-                        <h2>IMIĘ I NAZWISKO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea
-                            commodo consequat.</p>
-                        <button
-                            onclick="window.location.href='https://www.instagram.com/polaszczepanska/'">INSTAGRAM</button>
-                    </div>
-                </li>
-                <li>
-                    <img src="{% static 'notes/media/instructors/oskar.jpg' %}" alt="">
-                    <div>
-                        <h2>IMIĘ I NAZWISKO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea
-                            commodo consequat.</p>
-                        <button
-                            onclick="window.location.href='https://www.instagram.com/oskarlitorowicz/'">INSTAGRAM</button>
-                    </div>
-                </li>
-                <li>
-                    <img src="{% static 'notes/media/instructors/juliawywial.jpg' %}" alt="">
-                    <div>
-                        <h2>IMIĘ I NAZWISKO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea
-                            commodo consequat.</p>
-                        <button
-                            onclick="window.location.href='https://www.instagram.com/julia.wywial/'">INSTAGRAM</button>
-                    </div>
-                </li>
-                <li>
-                    <img src="{% static 'notes/media/instructors/yuliia.jpg' %}" alt="">
-                    <div>
-                        <h2>IMIĘ I NAZWISKO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea
-                            commodo consequat.</p>
-                        <button
-                            onclick="window.location.href='https://www.instagram.com/chernika_dance_/'">INSTAGRAM</button>
-                    </div>
-                </li>
-                <li>
-                    <img src="{% static 'notes/media/instructors/anzhelika.jpg' %}" alt="">
-                    <div>
-                        <h2>IMIĘ I NAZWISKO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea
-                            commodo consequat.</p>
-                        <button onclick="window.location.href='https://www.instagram.com'">INSTAGRAM</button>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
         </section>
 
@@ -205,63 +99,18 @@
             <h1>CENNIK</h1>
             <section class='prices-main'>
                 <ul class='prices-main-list'>
+                    {% for priceList in price_list %}
                     <li class='prices-list'>
-                        <h2>KARNET 4 WEJŚĆ</h2>
+                        <h2>{{priceList.title}}</h2>
                         <ul class='prices-info'>
-                            <li>zajęcia 1xw tygodniu</li>
-                            <li>zajęcia trwają 60 minut</li>
-                            <li>zajęcia z instruktorem w grupie</li>
-                            <li>karnet ważny 30 dni, od dnia nabycia</li>
+                            <li>{{priceList.content_1}}</li>
+                            <li>{{priceList.content_2}}</li>
+                            <li>{{priceList.content_3}}</li>
+                            <li>{{priceList.content_4}}</li>
                         </ul>
-                        <p>150zł</p>
+                        <p>{{priceList.price}}</p>
                     </li>
-                    <li class='prices-list'>
-                        <h2>KARNET 8 WEJŚĆ</h2>
-                        <ul class='prices-info'>
-                            <li>zajęcia 2xw tygodniu</li>
-                            <li>zajęcia trwają 60 minut</li>
-                            <li>zajęcia z instruktorem w grupie</li>
-                            <li>karnet ważny 30 dni, od dnia nabycia</li>
-                        </ul>
-                        <p>250zł</p>
-                    </li>
-                    <li class='prices-list'>
-                        <h2>KARNET 12 WEJŚĆ</h2>
-                        <ul class='prices-info'>
-                            <li>zajęcia 3xw tygodniu</li>
-                            <li>zajęcia trwają 60 minut</li>
-                            <li>zajęcia z instruktorem w grupie</li>
-                            <li>karnet ważny 30 dni, od dnia nabycia</li>
-                        </ul>
-                        <p>350zł</p>
-                    </li>
-                    <li class='prices-list'>
-                        <h2>PAKIET VIP</h2>
-                        <ul class='prices-info'>
-                            <li>nielimitowany dostęp</li>
-                            <li>zajęcia trwają 60 minut</li>
-                            <li>zajęcia z instruktorem w grupie</li>
-                            <li>karnet ważny 30 dni, od dnia nabycia</li>
-                        </ul>
-                        <p>450zł</p>
-                    </li>
-                    <li class='prices-list'>
-                        <h2>POJEDYNCZE WEJŚCIE</h2>
-                        <ul class='prices-info'>
-                            <li>jednorazowe wejście na wybrane zajęcia</li>
-                            <li>zajęcia trwają 60 minut</li>
-                            <li>zajęcia z instruktorem w grupie</li>
-                        </ul>
-                        <p>50zł</p>
-                    </li>
-                    <li class='prices-list'>
-                        <h2>ZAJĘCIA INDYWIDUALNE</h2>
-                        <p class='prices-list-text'>Doskonała okazja, aby dopasować trening do Twoich potrzeb.
-                            Osiągnij
-                            swoje
-                            cele treningowe szybciej!</p>
-                        <p>Cena</p>
-                    </li>
+                    {% endfor %}
                 </ul>
             </section>
         </section>
@@ -292,10 +141,12 @@
         <div class='nav-footer'>
             <nav>
                 <ul>
+                    {% for contactData in contact %}
                     <li><i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <h3>Adres</h3>
+                        <h3>{{contactData.title}}</h3>
                         <p>Rynek 31/32 <br> 50-121 Wrocław</p>
                     </li>
+                    {% endfor %}
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <h3>Telefon</h3>
