@@ -61,7 +61,7 @@ header {
 .navigation .openMenu {
   display: block;
   font-size: 25px;
-  margin: 0 10px;
+  margin: 10px;
   cursor: pointer;
 }
 
@@ -76,6 +76,7 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
+  margin: 3px 11px;
 }
 
 .mainMenu li a:hover {
@@ -121,14 +122,18 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 20px;
+}
+
+.offer ul {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .offer ul li {
   list-style: none;
   text-align: center;
   margin: 20px;
-  width: 250px;
+  width: 300px;
 }
 
 .offer ul li img {
@@ -146,7 +151,6 @@ h1 {
   margin: 10px 50px;
   font-weight: 300;
   color: rgb(184, 184, 184);
-  margin: 20px;
 }
 
 .videos {
@@ -154,7 +158,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   text-align: center;
 }
 
@@ -184,10 +188,6 @@ iframe {
   margin: 0 20px;
 }
 
-.instructors ul {
-  width: 75%;
-}
-
 .instructors ul li {
   list-style: none;
   display: flex;
@@ -201,11 +201,14 @@ iframe {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  border: 3px solid rgb(187, 187, 187);
+  margin-top: 25px;
 }
 
 .instructors ul li div {
   text-align: center;
   margin: 20px 30px;
+  width: 300px;
 }
 
 .instructors ul li div h2 {
@@ -216,7 +219,7 @@ iframe {
 .instructors ul li div p {
   text-align: center;
   font-weight: 200;
-  margin: 20px 0;
+  margin: 20px 0 40px 0;
   color: rgb(184, 184, 184);
 }
 
@@ -253,7 +256,6 @@ iframe {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin-top: 20px;
-  width: 70%;
 }
 
 .prices-list {
@@ -348,6 +350,7 @@ iframe {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .nav-footer ul li {
@@ -393,6 +396,7 @@ iframe {
 .author a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -450,7 +454,7 @@ iframe {
   }
 
   .offer {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -463,11 +467,16 @@ iframe {
   }
 
   .offer ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  .offer ul li {
+    width: auto;
   }
 
   .offer ul li p {
@@ -481,17 +490,18 @@ iframe {
 
   .videos p {
     font-size: 20px;
-    margin: 5px;
+    /* margin: 5px; */
     width: 70%;
   }
 
-  .instructors {
+  .instructors ul {
     width: 80%;
-    margin: 0 auto;
   }
 
-  .instructors ul {
-    width: 100%;
+  .instructors div {
+    width: 350px;
+    margin: 0 0 0 70px;
+    height: 100%;
   }
 
   .instructors ul li {
@@ -510,11 +520,6 @@ iframe {
     height: 200px;
   }
 
-  .instructors ul li div {
-    margin: 0 0 0 70px;
-    width: 450px;
-  }
-
   .instructors ul li:nth-child(3) div {
     margin: 0 90px 0 0;
   }
@@ -526,9 +531,9 @@ iframe {
   .instructors ul li div h2 {
     font-size: 24px;
   }
-
+  /* TODO: co jest z tym dive? jakie style p nachodzi na a */
   .instructors ul li div p {
-    margin: 10px 20px;
+    margin: 10px 0 40px 0;
     font-size: 17px;
   }
 
@@ -551,6 +556,10 @@ iframe {
   }
 
   .prices-list {
+    margin: 0;
+  }
+
+  .prices ul li:last-child {
     margin: 0;
   }
 
@@ -596,15 +605,15 @@ iframe {
 
 @media (min-width: 1200px) {
   .offer ul {
-    width: 75%;
+    width: 65%;
   }
 
   .instructors ul {
-    width: 75%;
+    width: 65%;
   }
 
   .prices-main {
-    width: 75%;
+    width: 65%;
   }
 
   .prices-main-list {
@@ -634,15 +643,15 @@ iframe {
   }
 
   .offer ul {
-    width: 60%;
+    width: 50%;
   }
 
   .instructors ul {
-    width: 60%;
+    width: 50%;
   }
 
   .prices-main {
-    width: 60%;
+    width: 50%;
   }
 
   .nav-footer {

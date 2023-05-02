@@ -20,8 +20,8 @@
             <li>
                 <div class='closeMenu'><i class='fa fa-times'></i></div>
                 <span class='icons'>
-                    <a href="https://www.facebook.com/chernikadance"><i class='fa fa-facebook'></i></a>
-                    <a href="https://www.instagram.com/chernika_studio.pl/"><i class='fa fa-instagram'></i></a>
+                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
                 </span>
             </li>
         </ul>
@@ -81,15 +81,17 @@
             <ul>
                 {% for trainer in trainers %}
                 <li>
-                    {# skalowanie obrazków: https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #}
+                    <!-- {# skalowanie obrazków:
+                    https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
                     {% thumbnail trainer.photo "200x200" as im %}
-                    <img src="{{im.url}}" alt=""> {# brakuje alt. Dodaj np. trainer.title #}
+                    <img src="{{im.url}}" alt="{{trainer.title}}">
                     {% endthumbnail %}
                     <div>
                         <h2>{{trainer.title}}</h2>
                         <p>{{trainer.content}}</p>
                         <a href='{{trainer.profile_url}}'>
                             INSTAGRAM</a>
+
                     </div>
                 </li>
                 {% endfor %}
@@ -131,7 +133,7 @@
                 inne.
             </p>
             <p>Jeśli szukasz sali, by
-                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"><strong>NAPISZ DO
+                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"><br><strong>NAPISZ DO
                         NAS</strong></a> lub <a href="tel:+48790318971"><strong>ZADZWOŃ</strong></a></p>
         </div>
         <hr class='line'>
@@ -145,15 +147,15 @@
         <div class='nav-footer'>
             <nav>
                 <ul>
-                     {# nie for, tutaj zrob po prostu contactData.title #}
+                    {# nie for, tutaj zrob po prostu contactData.title #}
                     <li><i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <h3>{{contactData.title}}</h3>
-                        <p>Rynek 31/32 {{contactData.address_1}} itp. <br> 50-121 Wrocław</p> 
+                        <h3>Adres</h3>
+                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
                     </li>
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <h3>Telefon</h3>
-                        <p> <a href="tel:+48790318971">790 318 971</a></p>
+                        <p> <a href="tel:+48790318971">{{contact.phone}}</a></p>
                     </li>
                     <li><i class="fa-solid fa-envelope"></i>
                         <h3>E-mail</h3>
@@ -164,14 +166,15 @@
             <div class='social'>
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
-                    <a href="https://www.facebook.com/chernikadance"><i class='fa fa-facebook'></i></a>
-                    <a href="https://www.instagram.com/chernika_studio.pl/"><i class='fa fa-instagram'></i></a>
+                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
                 </span>
             </div>
         </div>
         <div class='author'>
             <p>Copyright © {% now "Y"%}
-                <a href="">by Ostańscy</a>
+                by <a href="https://github.com/Ewelina-EN">Ewelina</a> & <a href="https://akademiait.com.pl/">Jacek</a>
+                Ostańscy</a>
             </p>
         </div>
     </footer>
