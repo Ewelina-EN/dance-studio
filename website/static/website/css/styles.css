@@ -13,13 +13,18 @@ body {
 /* navigation */
 
 header {
-  background: rgb(0, 0, 0);
+  background: black;
   color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid white;
   padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
 .logo img {
@@ -40,7 +45,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(0, 0, 0);
+  background: black;
   transition: top 1s ease 0s;
   display: none;
   list-style: none;
