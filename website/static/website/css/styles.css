@@ -89,6 +89,10 @@ header {
   border-bottom: 2px solid rgb(139, 139, 139);
 }
 
+.mainMenu li a:hover:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
 .icons i {
   display: inline-block;
   padding: 50px 25px 0 25px;
@@ -210,6 +214,10 @@ iframe {
   margin-top: 25px;
 }
 
+.instructors ul li img:hover {
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 1);
+}
+
 .instructors ul li div {
   text-align: center;
   margin: 20px 30px;
@@ -244,6 +252,43 @@ iframe {
   color: black;
 }
 
+.schedule {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.schedule h1 {
+  text-align: center;
+}
+
+.schedule table {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid rgb(139, 139, 139);
+}
+
+.schedule table tr td {
+  padding: 10px 0;
+}
+
+.day {
+  margin-top: 25px;
+}
+
+.schedule th {
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.workout {
+  margin-left: 30px;
+}
+
+.sch-instructor {
+  text-align: right;
+}
+
 .prices {
   display: flex;
   flex-direction: column;
@@ -273,6 +318,10 @@ iframe {
   margin: 10px 0;
   min-height: 350px;
   text-align: center;
+}
+
+.prices-list:hover {
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 1);
 }
 
 .prices ul li h2 {
@@ -404,7 +453,7 @@ iframe {
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .navigation .openMenu {
     display: none;
   }
@@ -413,7 +462,7 @@ iframe {
   }
 
   header {
-    padding: 10px 30px;
+    padding: 0 30px;
   }
 
   .logo img {
@@ -423,7 +472,7 @@ iframe {
 
   .navigation {
     margin: 0;
-    padding: 15px 0;
+    padding: 0;
   }
 
   .navigation .mainMenu {
@@ -542,6 +591,11 @@ iframe {
     font-size: 17px;
   }
 
+  .schedule {
+    width: 80%;
+    margin: 0 auto;
+  }
+
   .prices {
     width: 80%;
     margin: 0 auto;
@@ -617,6 +671,11 @@ iframe {
     width: 65%;
   }
 
+  .schedule {
+    width: 50%;
+    margin: 0 auto;
+  }
+
   .prices-main {
     width: 65%;
   }
@@ -653,6 +712,11 @@ iframe {
 
   .instructors ul {
     width: 50%;
+  }
+
+  .schedule {
+    width: 40%;
+    margin: 0 auto;
   }
 
   .prices-main {
