@@ -15,11 +15,12 @@ body {
 header {
   background: black;
   color: rgb(255, 255, 255);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid white;
   padding: 10px 20px;
+  border-bottom: 1px solid white;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,7 +29,7 @@ header {
 }
 
 .logo img {
-  width: 70px;
+  width: 60px;
 }
 
 .navigation img {
@@ -110,8 +111,8 @@ header {
 .line {
   width: 80%;
   height: 1px;
-  margin: 50px auto;
   background-color: white;
+  margin: 0 auto;
 }
 
 /* big video */
@@ -124,6 +125,7 @@ h1 {
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 2px;
+  margin: 100px 0 0 0;
 }
 
 .offer {
@@ -263,16 +265,19 @@ iframe {
 
 .schedule table {
   width: 100%;
-  padding: 10px 15px;
   border: 1px solid rgb(139, 139, 139);
-}
-
-.schedule table tr td {
-  padding: 10px 0;
 }
 
 .day {
   margin-top: 25px;
+}
+th {
+  padding: 10px;
+  border-bottom: 1px solid rgb(139, 139, 139);
+}
+
+td {
+  padding: 10px 15px;
 }
 
 .schedule th {
@@ -339,10 +344,6 @@ iframe {
   margin-top: 10px;
   color: rgb(184, 184, 184);
   text-align: center;
-}
-
-.prices ul li:last-child {
-  margin: 10px 0 0 0;
 }
 
 .prices-list p {
@@ -466,8 +467,7 @@ iframe {
   }
 
   .logo img {
-    margin: 5px 0 5px 20px;
-    width: 90px;
+    margin: 10px 0;
   }
 
   .navigation {
@@ -615,10 +615,6 @@ iframe {
   }
 
   .prices-list {
-    margin: 0;
-  }
-
-  .prices ul li:last-child {
     margin: 0;
   }
 
