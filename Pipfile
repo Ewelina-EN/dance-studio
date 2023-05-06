@@ -8,6 +8,7 @@ django = "==4.1.7"
 pillow = "==9.5.0"
 django-auditlog = "==2.2.2"
 sorl-thumbnail = "==12.9.0"
+pipreqs = "*"
 
 [dev-packages]
 
