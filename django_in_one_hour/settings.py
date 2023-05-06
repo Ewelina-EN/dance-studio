@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-ltj38teen(i04xz*1(jc-n^zc=un%(25(e($!47mg!y)1gl+b8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["chernikastudio.pl", "occgkmvhza.cfolks.pl"]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "auditlog",
-    'sorl.thumbnail',
+    "sorl.thumbnail",
 ] + PROJECT_APPS
 
 MIDDLEWARE = [
@@ -91,13 +91,25 @@ WSGI_APPLICATION = "django_in_one_hour.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+if not os.environ.get("IS_PRODUCTION"):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
-
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "occgkmvhza_chernika",
+            "USER": "occgkmvhza_chernika",
+            "PASSWORD": os.environ["OCCGKMVHZA_CHERNIKA_PASSWORD"],
+            "HOST": "localhost",
+            "PORT": "3306",
+            "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
