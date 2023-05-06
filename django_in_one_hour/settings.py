@@ -162,5 +162,5 @@ if os.environ.get("IS_PRODUCTION"):
     ALLOWED_HOSTS = [
         "chernikastudio.pl",
     ]
-    STATIC_URL = "http://media.chernikastudio.pl/media/"
-    MEDIA_URL = "http://media.chernikastudio.pl/static/"
+    MEDIA_URL = "http://media.chernikastudio.pl/media/"
+    STATIC_URL = "http://media.chernikastudio.pl/static/"
