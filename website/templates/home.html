@@ -1,0 +1,400 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block content %}
+<!-- navigation -->
+<header>
+    <div class='logo'>
+        <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt="">
+    </div>
+    <nav class='navigation'>
+        <div class='openMenu'><i class='fa fa-bars'></i></div>
+        <ul class='mainMenu'>
+            <li><a href="/" class='link'>HOME</a></li>
+            <li><a href="#instructors" class='link'>O NAS</a></li>
+            <li><a href="#offer" class='link'>OFERTA</a></li>
+            <li><a href="#schedule" class='link'>GRAFIK</a></li>
+            <li><a href="#prices" class='link'>CENNIK</a></li>
+            <li><a href="#contact" class='link'>KONTAKT</a></li>
+            <li>
+                <div class='closeMenu'><i class='fa fa-times'></i></div>
+                <span class='icons'>
+                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <main>
+        <!-- main video -->
+        <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
+            <source src="{% static 'website/media/videos/pyta-winylowa-57307.mp4' %}" type="video/mp4">
+        </video>
+
+        <hr class='line'>
+
+        <!-- offer section -->
+        <section class='offer' id='offer'>
+            <h1>OFERTA</h1>
+            <ul>
+                {% for offer in offers %}
+                <li>
+                    <img src="" alt="">
+                    <h4>{{offer.title}}</h4>
+                    <p>{{offer.content}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <!-- czy stworzyć 2 taki sam model czy jest inna opcja? -->
+        </section>
+
+        <hr class='line'>
+
+        <!-- classes video section -->
+        {% for blockWithVideo in blocks_with_video %}
+        <section class='videos' id='videos'>
+            <h1>{{blockWithVideo.title}}</h1>
+            <p>{{blockWithVideo.content}}</p>
+            <!-- <p>{{blockWithVideo.content_1}}</p> -->
+            <div>
+                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_1}}"
+                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </iframe>
+                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_2}}"
+                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_3}}"
+                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
+        </section>
+        <hr class='line'>
+        {% endfor %}
+
+        <!-- instructors section-->
+        <section class='instructors' id='instructors'>
+            <h1>TRENERZY</h1>
+            <ul>
+                {% for trainer in trainers %}
+                <li>
+                    <!-- {# skalowanie obrazków:
+                    https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
+                    {% thumbnail trainer.photo "200x200" as im %}
+                    <img src="{{im.url}}" alt="{{trainer.title}}">
+                    {% endthumbnail %}
+                    <div>
+                        <h2>{{trainer.title}}</h2>
+                        <p>{{trainer.content}}</p>
+                        <!-- <a href='{{trainer.profile_url}}'>
+                            INSTAGRAM</a> -->
+
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <hr class='line'>
+
+        <!--schedule section  -->
+        <section class='schedule' id='schedule'>
+            <h1>GRAFIK</h1>
+            {% for weekday in weekdays %}
+            {% if weekday.schedule_items.count %}
+            <table class='day'>
+                <thead class='day-name'>
+                    <tr>
+                        <th colspan="3">{{weekday.title}}</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    {% for item in weekday.schedule_items.all %}
+                    <tr>
+                        <td class='hour'>{{item.start_time|time:"H:i"}} - {{item.end_time|time:"H:i"}}</td>
+                        <td class='workout'>{{item.title}}</td>
+                        <td class='sch-instructor'>{{item.instructor}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            {% endfor %}
+
+            <table class='day'>
+                <thead class='day-name'>
+                    <tr>
+                        <th colspan="3">Poniedziałek</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    <tr>
+                        <td class='hour'>17:00-18:00</td>
+                        <td class='workout'>Female Dance - beginner | start 08.05</td>
+                        <td class='sch-instructor'>Nastia</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>18:00-19:00</td>
+                        <td class='workout'>Strip Dance - advance</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>19:00-20:00</td>
+                        <td class='workout'>High Heels - open</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class='day'>
+                <thead>
+                    <tr>
+                        <th colspan="3">Wtorek</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    <tr>
+                        <td class='hour'>10:00-11:00</td>
+                        <td class='workout'>High Heels - beginner</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>11:00-12:00</td>
+                        <td class='workout'>Strip Dance - begginer</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>17:00-18:00</td>
+                        <td class='workout'>High Heels - begginer</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>20:00-21:00</td>
+                        <td class='workout'>Hip Hop - open | start czerwiec</td>
+                        <td class='sch-instructor'>Oskar</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>21:00-22:00</td>
+                        <td class='workout'>Female Dance - open | start 09.05</td>
+                        <td class='sch-instructor'>Nastia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class='day'>
+                <thead>
+                    <tr>
+                        <th colspan="3">Środa</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    <tr>
+                        <td class='hour'>17:00-18:00</td>
+                        <td class='workout'>Hip Hop - 13+teens | start czerwiec</td>
+                        <td class='sch-instructor'>Julia</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>18:00-19:00</td>
+                        <td class='workout'>High Heels - beginner | start 10.05</td>
+                        <td class='sch-instructor'>Pola</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>19:00-20:00</td>
+                        <td class='workout'>High Heels - open | start czerwiec</td>
+                        <td class='sch-instructor'>Pola</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class='day'>
+                <thead>
+                    <tr>
+                        <th colspan="3">Czwartek</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    <tr>
+                        <td class='hour'>17:00-18:00</td>
+                        <td class='workout'>Strip Dance - beginner</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>18:00-19:00</td>
+                        <td class='workout'>Strip Dance - advance</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>19:00-20:00</td>
+                        <td class='workout'>High Heels - open</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>20:00-21:00</td>
+                        <td class='workout'>High Heels - open | start czerwiec</td>
+                        <td class='sch-instructor'>Julia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class='day'>
+                <thead>
+                    <tr>
+                        <th colspan="3">Piątek</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    <tr>
+                        <td class='hour'>10:00-11:00</td>
+                        <td class='workout'>High Heels - beginner | start czerwiec</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>11:00-12:00</td>
+                        <td class='workout'>Strip Dance - beginner | start czerwiec</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>18:00-19:00</td>
+                        <td class='workout'>Strip Acro - beginner</td>
+                        <td class='sch-instructor'>Ania</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>19:00-20:00</td>
+                        <td class='workout'>Strip Dance - beginner</td>
+                        <td class='sch-instructor'>Ania</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>20:00-21:00</td>
+                        <td class='workout'>Hip Hop - open | start czerwiec</td>
+                        <td class='sch-instructor'>Oskar</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>21:00-22:00</td>
+                        <td class='workout'>Female Dance - open | start 12.05</td>
+                        <td class='sch-instructor'>Nastia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class='day'>
+                <thead>
+                    <tr>
+                        <th colspan="3">Sobota</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    <tr>
+                        <td class='hour'>13:00-14:00</td>
+                        <td class='workout'>High Heels - beginner</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>14:00-15:00</td>
+                        <td class='workout'>Stretching - open</td>
+                        <td class='sch-instructor'>Chernika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>15:00-16:00</td>
+                        <td class='workout'>Twerk - open | start czerwiec</td>
+                        <td class='sch-instructor'>Anzhelika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>16:00-17:00</td>
+                        <td class='workout'>Female Dance - open</td>
+                        <td class='sch-instructor'>Anzhelika</td>
+                    </tr>
+                    <tr>
+                        <td class='hour'>17:00-18:00</td>
+                        <td class='workout'>Strip Dance - open | start czerwiec</td>
+                        <td class='sch-instructor'>Ania</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr class='line'>
+
+        <!-- prices section -->
+        <section class='prices' id='prices'>
+            <h1>CENNIK</h1>
+            <section class='prices-main'>
+                <ul class='prices-main-list'>
+                    {% for priceList in price_list %}
+                    <li class='prices-list'>
+                        <h2>{{priceList.title}}</h2>
+                        <ul class='prices-info'>
+                            <li>{{priceList.content_1}}</li>
+                            <li>{{priceList.content_2}}</li>
+                            <li>{{priceList.content_3}}</li>
+                            <li>{{priceList.content_4}}</li>
+                        </ul>
+                        <p>{{priceList.price|floatformat:"0"}}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </section>
+        <!-- dance space to rental -->
+        <div class='lessons'>
+            <h2>OFERTA WYNAJMU SALI</h2>
+            <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
+                Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
+                Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy przestronną
+                salę z
+                drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z profesjonalnym
+                nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne, treningi,
+                próby i
+                inne.
+            </p>
+            <p>Jeśli szukasz sali, by
+                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"><br><strong>NAPISZ DO
+                        NAS</strong></a> lub <a href="tel:+48790318971"><strong>ZADZWOŃ</strong></a></p>
+        </div>
+        <hr class='line'>
+        <!-- short text -->
+        <div class='text'>
+            <p>Odkryj przyjemność z tańca.</p>
+            <p>DOŁĄCZ DO NAS!</p>
+        </div>
+    </main>
+    <footer id='contact'>
+        <div class='nav-footer'>
+            <nav>
+                <ul>
+                    {# nie for, tutaj zrob po prostu contactData.title #}
+                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <h3>Adres</h3>
+                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Telefon</h3>
+                        <p> <a href="tel:+48790318971">{{contact.phone}}</a></p>
+                    </li>
+                    <li><i class="fa-solid fa-envelope"></i>
+                        <h3>E-mail</h3>
+                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio@gmail.com</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class='social'>
+                <h2>Bądź na bieżąco!</h2>
+                <span class='icons'>
+                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
+                </span>
+            </div>
+        </div>
+        <div class='author'>
+            <p>Copyright © {% now "Y"%}
+                by <a href="https://github.com/Ewelina-EN">Ewelina</a> & <a href="https://akademiait.com.pl/">Jacek</a>
+                Ostańscy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+{% endblock %}
