@@ -11,7 +11,7 @@
     <nav class='navigation'>
         <div class='openMenu'><i class='fa fa-bars'></i></div>
         <ul class='mainMenu'>
-            <li><a href="#" class='link'>HOME</a></li>
+            <li><a href="/" class='link'>HOME</a></li>
             <li><a href="#instructors" class='link'>O NAS</a></li>
             <li><a href="#offer" class='link'>OFERTA</a></li>
             <li><a href="#schedule" class='link'>GRAFIK</a></li>
@@ -61,16 +61,21 @@
             <p>{{blockWithVideo.content}}</p>
             <!-- <p>{{blockWithVideo.content_1}}</p> -->
             <div>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" frameborder="0" title="YouTube video player"
+                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_1}}"
+                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0" title="YouTube video player"
+                </iframe>
+                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_2}}"
+                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0" title="YouTube video player"
+                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_3}}"
+                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
+
         </section>
         <hr class='line'>
         {% endfor %}
@@ -89,8 +94,8 @@
                     <div>
                         <h2>{{trainer.title}}</h2>
                         <p>{{trainer.content}}</p>
-                        <a href='{{trainer.profile_url}}'>
-                            INSTAGRAM</a>
+                        <!-- <a href='{{trainer.profile_url}}'>
+                            INSTAGRAM</a> -->
 
                     </div>
                 </li>
@@ -103,6 +108,27 @@
         <!--schedule section  -->
         <section class='schedule' id='schedule'>
             <h1>GRAFIK</h1>
+            {% for weekday in weekdays %}
+            {% if weekday.schedule_items.count %}
+            <table class='day'>
+                <thead class='day-name'>
+                    <tr>
+                        <th colspan="3">{{weekday.title}}</th>
+                    </tr>
+                </thead>
+                <tbody class='details'>
+                    {% for item in weekday.schedule_items.all %}
+                    <tr>
+                        <td class='hour'>{{item.start_time|time:"H:i"}} - {{item.end_time|time:"H:i"}}</td>
+                        <td class='workout'>{{item.title}}</td>
+                        <td class='sch-instructor'>{{item.instructor}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            {% endfor %}
+
             <table class='day'>
                 <thead class='day-name'>
                     <tr>
@@ -287,7 +313,6 @@
                     </tr>
                 </tbody>
             </table>
-
         </section>
 
         <hr class='line'>

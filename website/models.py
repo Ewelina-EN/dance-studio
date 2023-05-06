@@ -50,3 +50,14 @@ class ContactData(BasicModel):
     phone = models.CharField(max_length=255)
     facebook = models.URLField()
     instagram = models.URLField()
+
+class WeekDay(BasicModel):
+    @property
+    def schedule_items(self):
+        return ScheduleItem.active_objects.filter(week_day=self)
+
+class ScheduleItem(BasicModel):
+    week_day = models.ForeignKey(WeekDay,on_delete=models.CASCADE)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    instructor = models.CharField(max_length=255)
