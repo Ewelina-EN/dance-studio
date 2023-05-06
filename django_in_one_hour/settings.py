@@ -27,9 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-ltj38teen(i04xz*1(jc-n^zc=un%(25(e($!47mg!y)1gl+b8"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["chernikastudio.pl", "occgkmvhza.cfolks.pl"]
+if not os.environ.get("IS_PRODUCTION"):
+    DEBUG = True
+    ALLOWED_HOSTS = [
+        "127.0.0.1",
+    ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
@@ -145,12 +147,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
-STATIC_ROOT = location(os.path.join("site_media", "static"))
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+if os.environ.get("IS_PRODUCTION"):
+    DEBUG = False
+    ALLOWED_HOSTS = [
+        "chernikastudio.pl",
+    ]
+    STATIC_URL = "https://static.chernikastudio.pl/"
+    MEDIA_URL = "https://media.chernikastudio.pl/"

@@ -130,4 +130,5 @@ dmypy.json
 
 .vscode
 media/cache
+static/
 .DS_store
