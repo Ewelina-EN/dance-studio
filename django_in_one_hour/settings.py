@@ -33,6 +33,13 @@ if not os.environ.get("IS_PRODUCTION"):
         "127.0.0.1",
     ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media", "media")
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = "/media/"
+
 
 # Application definition
 PROJECT_APPS = ["website"]
@@ -140,16 +147,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "/media/"
+STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "media")
+STATIC_ROOT = os.path.join(BASE_DIR, "media", "statoc")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -161,5 +162,5 @@ if os.environ.get("IS_PRODUCTION"):
     ALLOWED_HOSTS = [
         "chernikastudio.pl",
     ]
-    STATIC_URL = "http://media.chernikastudio.pl/"
-    MEDIA_URL = "http://media.chernikastudio.pl/"
+    STATIC_URL = "http://media.chernikastudio.pl/media/"
+    MEDIA_URL = "http://media.chernikastudio.pl/static/"
