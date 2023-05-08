@@ -52,9 +52,15 @@ header {
   list-style: none;
 }
 
-.mainMenu li a {
-  display: inline-block;
+.mainMenu li {
   padding: 10px;
+}
+
+.mainMenu li:nth-last-child(-n + 1) {
+  padding: 0;
+}
+
+.mainMenu li a {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
@@ -96,22 +102,13 @@ header {
 }
 
 .mainMenu li span a i {
-  width: 50px;
-  height: 50px;
   text-align: center;
-}
-.mainMenu li span a i:hover {
-  color: black;
-  background-color: rgb(217, 217, 217);
-  border-radius: 50%;
-  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 1);
 }
 
 .icons i {
-  display: inline-block;
-  padding: 50px 25px 0 25px;
   font-size: 25px;
   cursor: pointer;
+  padding: 20px;
 }
 
 .navigation .logo {
@@ -533,9 +530,8 @@ footer {
     font-size: 17px;
   }
 
-  .icons i {
-    padding: 10px 0 0 0;
-    /* font-size: 20px; */
+  .fa {
+    padding: 0 10px;
   }
 
   .header-video {
