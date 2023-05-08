@@ -12,8 +12,8 @@
         <div class='openMenu'><i class='fa fa-bars'></i></div>
         <ul class='mainMenu'>
             <li><a href="/" class='link'>HOME</a></li>
-            <li><a href="#instructors" class='link'>O NAS</a></li>
             <li><a href="#offer" class='link'>OFERTA</a></li>
+            <li><a href="#instructors" class='link'>TRENERZY</a></li>
             <li><a href="#schedule" class='link'>GRAFIK</a></li>
             <li><a href="#prices" class='link'>CENNIK</a></li>
             <li><a href="#contact" class='link'>KONTAKT</a></li>
@@ -31,11 +31,11 @@
 <body>
     <main>
         <!-- main video -->
-        <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
+        <!-- <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
             <source src="{% static 'website/media/videos/pyta-winylowa-57307.mp4' %}" type="video/mp4">
         </video>
 
-        <hr class='line'>
+        <hr class='line'> -->
 
         <!-- offer section -->
         <section class='offer' id='offer'>
@@ -43,13 +43,14 @@
             <ul>
                 {% for offer in offers %}
                 <li>
-                    <img src="" alt="">
+                    {% thumbnail offer.photo "200x200" as im %}
+                    <img src="{{im.url}}" alt="{{offer.title}}">
+                    {% endthumbnail %}
                     <h4>{{offer.title}}</h4>
                     <p>{{offer.content}}</p>
                 </li>
                 {% endfor %}
             </ul>
-            <!-- czy stworzyć 2 taki sam model czy jest inna opcja? -->
         </section>
 
         <hr class='line'>
@@ -59,23 +60,28 @@
         <section class='videos' id='videos'>
             <h1>{{blockWithVideo.title}}</h1>
             <p>{{blockWithVideo.content}}</p>
-            <!-- <p>{{blockWithVideo.content_1}}</p> -->
+            <p>{{blockWithVideo.content_extended}}</p>
             <div>
-                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_1}}"
-                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
+                <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"
+                    title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                </iframe>
-                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_2}}"
-                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
+                <iframe src="{{blockWithVideo.video_iframe_src_url_2}}"
+                    title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                <iframe width="397" height="705" src="{{blockWithVideo.video_iframe_src_url_3}}"
-                    title="Chernika Dance Studio - Szkoła tanca Wrocław - High Heels - Strip Dance" frameborder="0"
+                <iframe src="{{blockWithVideo.video_iframe_src_url_3}}"
+                    title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
-
+            <div class='text'>
+                <p>Chcesz zobaczyć więcej?</p>
+                <a href="https://www.youtube.com/@chernikadancestudio">SPRAWDŹ</a>
+            </div>
         </section>
         <hr class='line'>
         {% endfor %}
@@ -128,191 +134,13 @@
             </table>
             {% endif %}
             {% endfor %}
+            <div class='schedule-info'>
+                <p>Beginners - poziom początkujący. Advanced - poziom zaawansowany Open - zajęcia dla osób,
+                    na każdym poziomie umiejętności</p>
+                <p>⚪ - zajęcia się odbywają, wolne miejsca w grupie <br>
+                    🔵 - zbieramy zapisy, zajęcia ruszą po uzyskaniu minimalnej liczby chętnych</p>
+            </div>
 
-            <table class='day'>
-                <thead class='day-name'>
-                    <tr>
-                        <th colspan="3">Poniedziałek</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    <tr>
-                        <td class='hour'>17:00-18:00</td>
-                        <td class='workout'>Female Dance - beginner | start 08.05</td>
-                        <td class='sch-instructor'>Nastia</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>18:00-19:00</td>
-                        <td class='workout'>Strip Dance - advance</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>19:00-20:00</td>
-                        <td class='workout'>High Heels - open</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class='day'>
-                <thead>
-                    <tr>
-                        <th colspan="3">Wtorek</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    <tr>
-                        <td class='hour'>10:00-11:00</td>
-                        <td class='workout'>High Heels - beginner</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>11:00-12:00</td>
-                        <td class='workout'>Strip Dance - begginer</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>17:00-18:00</td>
-                        <td class='workout'>High Heels - begginer</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>20:00-21:00</td>
-                        <td class='workout'>Hip Hop - open | start czerwiec</td>
-                        <td class='sch-instructor'>Oskar</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>21:00-22:00</td>
-                        <td class='workout'>Female Dance - open | start 09.05</td>
-                        <td class='sch-instructor'>Nastia</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class='day'>
-                <thead>
-                    <tr>
-                        <th colspan="3">Środa</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    <tr>
-                        <td class='hour'>17:00-18:00</td>
-                        <td class='workout'>Hip Hop - 13+teens | start czerwiec</td>
-                        <td class='sch-instructor'>Julia</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>18:00-19:00</td>
-                        <td class='workout'>High Heels - beginner | start 10.05</td>
-                        <td class='sch-instructor'>Pola</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>19:00-20:00</td>
-                        <td class='workout'>High Heels - open | start czerwiec</td>
-                        <td class='sch-instructor'>Pola</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class='day'>
-                <thead>
-                    <tr>
-                        <th colspan="3">Czwartek</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    <tr>
-                        <td class='hour'>17:00-18:00</td>
-                        <td class='workout'>Strip Dance - beginner</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>18:00-19:00</td>
-                        <td class='workout'>Strip Dance - advance</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>19:00-20:00</td>
-                        <td class='workout'>High Heels - open</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>20:00-21:00</td>
-                        <td class='workout'>High Heels - open | start czerwiec</td>
-                        <td class='sch-instructor'>Julia</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class='day'>
-                <thead>
-                    <tr>
-                        <th colspan="3">Piątek</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    <tr>
-                        <td class='hour'>10:00-11:00</td>
-                        <td class='workout'>High Heels - beginner | start czerwiec</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>11:00-12:00</td>
-                        <td class='workout'>Strip Dance - beginner | start czerwiec</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>18:00-19:00</td>
-                        <td class='workout'>Strip Acro - beginner</td>
-                        <td class='sch-instructor'>Ania</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>19:00-20:00</td>
-                        <td class='workout'>Strip Dance - beginner</td>
-                        <td class='sch-instructor'>Ania</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>20:00-21:00</td>
-                        <td class='workout'>Hip Hop - open | start czerwiec</td>
-                        <td class='sch-instructor'>Oskar</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>21:00-22:00</td>
-                        <td class='workout'>Female Dance - open | start 12.05</td>
-                        <td class='sch-instructor'>Nastia</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class='day'>
-                <thead>
-                    <tr>
-                        <th colspan="3">Sobota</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    <tr>
-                        <td class='hour'>13:00-14:00</td>
-                        <td class='workout'>High Heels - beginner</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>14:00-15:00</td>
-                        <td class='workout'>Stretching - open</td>
-                        <td class='sch-instructor'>Chernika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>15:00-16:00</td>
-                        <td class='workout'>Twerk - open | start czerwiec</td>
-                        <td class='sch-instructor'>Anzhelika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>16:00-17:00</td>
-                        <td class='workout'>Female Dance - open</td>
-                        <td class='sch-instructor'>Anzhelika</td>
-                    </tr>
-                    <tr>
-                        <td class='hour'>17:00-18:00</td>
-                        <td class='workout'>Strip Dance - open | start czerwiec</td>
-                        <td class='sch-instructor'>Ania</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
 
         <hr class='line'>
@@ -357,14 +185,13 @@
         <!-- short text -->
         <div class='text'>
             <p>Odkryj przyjemność z tańca.</p>
-            <p>DOŁĄCZ DO NAS!</p>
+            <a href="https://www.instagram.com/">DOŁĄCZ DO NAS!</a>
         </div>
     </main>
     <footer id='contact'>
         <div class='nav-footer'>
             <nav>
                 <ul>
-                    {# nie for, tutaj zrob po prostu contactData.title #}
                     <li><i class="fa-sharp fa-solid fa-location-dot"></i>
                         <h3>Adres</h3>
                         <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
@@ -383,7 +210,7 @@
             <div class='social'>
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
-                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.facebook}}"><i class='fa fa-facebook '></i></a>
                     <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
                 </span>
             </div>

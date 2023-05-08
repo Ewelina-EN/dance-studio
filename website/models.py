@@ -27,14 +27,13 @@ class Offer(BasicModel):
 
 class BlockWithVideo(BasicModel):
     content = models.CharField(max_length=255)
-    # content_1 = models.CharField(max_length=255)
+    content_extended = models.CharField(max_length=255)
     video_iframe_src_url_1 = models.URLField()
     video_iframe_src_url_2 = models.URLField()
     video_iframe_src_url_3 = models.URLField()
 
 class Trainer(BasicModel):
     content = models.CharField(max_length=255)
-    profile_url = models.URLField("instagram")
     photo = models.ImageField(upload_to="trainers")
 
 class PriceList(BasicModel):
