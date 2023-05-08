@@ -31,11 +31,11 @@
 <body>
     <main>
         <!-- main video -->
-        <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
+        <!-- <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
             <source src="{% static 'website/media/videos/pyta-winylowa-57307.mp4' %}" type="video/mp4">
         </video>
 
-        <hr class='line'>
+        <hr class='line'> -->
 
         <!-- offer section -->
         <section class='offer' id='offer'>
@@ -43,13 +43,14 @@
             <ul>
                 {% for offer in offers %}
                 <li>
-                    <img src="" alt="">
+                    {% thumbnail offer.photo "200x200" as im %}
+                    <img src="{{im.url}}" alt="{{offer.title}}">
+                    {% endthumbnail %}
                     <h4>{{offer.title}}</h4>
                     <p>{{offer.content}}</p>
                 </li>
                 {% endfor %}
             </ul>
-            <!-- czy stworzyć 2 taki sam model czy jest inna opcja? -->
         </section>
 
         <hr class='line'>
@@ -61,7 +62,7 @@
             <p>{{blockWithVideo.content}}</p>
             <!-- <p>{{blockWithVideo.content_1}}</p> -->
             <div>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_1}}"
+                <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"
                     title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -77,7 +78,10 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
-
+            <div class='text'>
+                <p>Chcesz zobaczyć więcej?</p>
+                <a href="https://www.youtube.com/@chernikadancestudio">SPRAWDŹ</a>
+            </div>
         </section>
         <hr class='line'>
         {% endfor %}
@@ -131,9 +135,9 @@
             {% endif %}
             {% endfor %}
             <div class='schedule-info'>
-                <p>Beginner - poziom początkujący.  Advanced - poziom zaawansowany Open - zajęcia dla osób,
+                <p>Beginners - poziom początkujący. Advanced - poziom zaawansowany Open - zajęcia dla osób,
                     na każdym poziomie umiejętności</p>
-                <p>⚪ - zajęcia się odbywają, wolne miejsca w grupie
+                <p>⚪ - zajęcia się odbywają, wolne miejsca w grupie <br>
                     🔵 - zbieramy zapisy, zajęcia ruszą po uzyskaniu minimalnej liczby chętnych</p>
             </div>
 
@@ -181,14 +185,13 @@
         <!-- short text -->
         <div class='text'>
             <p>Odkryj przyjemność z tańca.</p>
-            <p>DOŁĄCZ DO NAS!</p>
+            <a href="https://www.instagram.com/">DOŁĄCZ DO NAS!</a>
         </div>
     </main>
     <footer id='contact'>
         <div class='nav-footer'>
             <nav>
                 <ul>
-                    {# nie for, tutaj zrob po prostu contactData.title #}
                     <li><i class="fa-sharp fa-solid fa-location-dot"></i>
                         <h3>Adres</h3>
                         <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
@@ -207,7 +210,7 @@
             <div class='social'>
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
-                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.facebook}}"><i class='fa fa-facebook '></i></a>
                     <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
                 </span>
             </div>
