@@ -34,7 +34,6 @@ class BlockWithVideo(BasicModel):
 
 class Trainer(BasicModel):
     content = models.CharField(max_length=255)
-    profile_url = models.URLField("instagram")
     photo = models.ImageField(upload_to="trainers")
 
 class PriceList(BasicModel):
