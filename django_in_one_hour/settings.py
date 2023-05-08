@@ -76,7 +76,6 @@ TEMPLATES = [
         "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
-            "charset": "utf8mb4",
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
@@ -110,7 +109,10 @@ else:
             "PASSWORD": os.environ["OCCGKMVHZA_CHERNIKA_PASSWORD"],
             "HOST": "localhost",
             "PORT": "3306",
-            "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
+            "OPTIONS": {
+                "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+                "charset": "utf8mb4",
+            },
         }
     }
 
