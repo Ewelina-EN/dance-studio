@@ -72,5 +72,5 @@ class ScheduleItem(BasicModel):
     start_time = models.TimeField()
     end_time = models.TimeField()
     instructor = models.CharField(max_length=255)
-    class Meta:
-        ordering = ["start_time"]
+    # class Meta:
+    #     ordering = ["start_time"]
