@@ -93,6 +93,8 @@ WSGI_APPLICATION = "django_in_one_hour.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+ADMINS = [("Jacek", "jacek@ostanski.com")]
+
 if not os.environ.get("IS_PRODUCTION"):
     DATABASES = {
         "default": {
