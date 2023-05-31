@@ -2,6 +2,8 @@
 {% load static %}
 {% load thumbnail %}
 
+<!-- TODO: style dla tabletów, desktop -->
+
 {% block content %}
 <!-- navigation -->
 <header>
@@ -13,15 +15,15 @@
         <ul class='mainMenu'>
             <li><a href="/" class='link'>HOME</a></li>
             <li><a href="#offer" class='link'>OFERTA</a></li>
-            <li><a href="#instructors" class='link'>TRENERZY</a></li>
+            <li><a href="#instructors" class='link'>TRENERKI</a></li>
             <li><a href="#schedule" class='link'>GRAFIK</a></li>
             <li><a href="#prices" class='link'>CENNIK</a></li>
             <li><a href="#contact" class='link'>KONTAKT</a></li>
             <li>
                 <div class='closeMenu'><i class='fa fa-times'></i></div>
                 <span class='icons'>
-                    <a href="{{contact.facebook}}"><i class='fa fa-facebook'></i></a>
-                    <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
+                    <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook'></i></a>
+                    <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
                 </span>
             </li>
         </ul>
@@ -52,35 +54,27 @@
                 {% endfor %}
             </ul>
         </section>
-
         <hr class='line'>
-
         <!-- classes video section -->
+        <!-- TODO: czy można zrobić taki uklad: zapraszamy do swiata tanca/trenerki/warsztaty -->
         {% for blockWithVideo in blocks_with_video %}
         <section class='videos' id='videos'>
             <h1>{{blockWithVideo.title}}</h1>
             <p>{{blockWithVideo.content}}</p>
             <p>{{blockWithVideo.content_extended}}</p>
             <div>
-                <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"
-                    title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"></iframe>
+                <iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_2}}"
-                    title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_3}}"
-                    title="LEKCJE TAŃCA WROCŁAW | High Heels | Strip Dance | Twerk | Chernika Dance Studio"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                <iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
             <div class='text'>
+                <!-- TODO: dodać możliwość edycji tekstu poniżej w panelu aby był inny dla zaprszamy do swiata i osobny dla warsztatów -->
                 <p>Chcesz zobaczyć więcej?</p>
-                <a href="https://www.youtube.com/@chernikadancestudio">SPRAWDŹ</a>
+                <a href="https://www.instagram.com/chernika_studio.pl/" target="_blank">SPRAWDŹ NASZ INSTAGRAM</a>
             </div>
         </section>
         <hr class='line'>
@@ -88,7 +82,7 @@
 
         <!-- instructors section-->
         <section class='instructors' id='instructors'>
-            <h1>TRENERZY</h1>
+            <h1>TRENERKI</h1>
             <ul>
                 {% for trainer in trainers %}
                 <li>
@@ -102,15 +96,12 @@
                         <p>{{trainer.content}}</p>
                         <!-- <a href='{{trainer.profile_url}}'>
                             INSTAGRAM</a> -->
-
                     </div>
                 </li>
                 {% endfor %}
             </ul>
         </section>
-
         <hr class='line'>
-
         <!--schedule section  -->
         <section class='schedule' id='schedule'>
             <h1>GRAFIK</h1>
@@ -135,10 +126,8 @@
             {% endif %}
             {% endfor %}
             <div class='schedule-info'>
-                <p>Beginners - poziom początkujący. Advanced - poziom zaawansowany Open - zajęcia dla osób,
+                <p>Beginners - poziom początkujący. <br> Advanced - poziom zaawansowany. <br> Open - zajęcia dla osób,
                     na każdym poziomie umiejętności</p>
-                <p>⚪ - zajęcia się odbywają, wolne miejsca w grupie <br>
-                    🔵 - zbieramy zapisy, zajęcia ruszą po uzyskaniu minimalnej liczby chętnych</p>
             </div>
 
         </section>
@@ -178,14 +167,15 @@
                 inne.
             </p>
             <p>Jeśli szukasz sali, by
-                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"><br><strong>NAPISZ DO
-                        NAS</strong></a> lub <a href="tel:+48790318971"><strong>ZADZWOŃ</strong></a></p>
+                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"
+                    target="_blank"><br><strong>NAPISZ DO
+                        NAS</strong></a> lub <a href="tel:+48790318971" target="_blank"><strong>ZADZWOŃ</strong></a></p>
         </div>
         <hr class='line'>
         <!-- short text -->
-        <div class='text'>
-            <p>Odkryj przyjemność z tańca.</p>
-            <a href="https://www.instagram.com/">DOŁĄCZ DO NAS!</a>
+        <div class='text-join'>
+            <p>Odkryj przyjemność z tańca</p>
+            <a href="https://www.instagram.com/" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
         </div>
     </main>
     <footer id='contact'>
@@ -210,14 +200,15 @@
             <div class='social'>
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
-                    <a href="{{contact.facebook}}"><i class='fa fa-facebook '></i></a>
-                    <a href="{{contact.instagram}}"><i class='fa fa-instagram'></i></a>
+                    <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook '></i></a>
+                    <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
                 </span>
             </div>
         </div>
         <div class='author'>
             <p>Copyright © {% now "Y"%}
-                by <a href="https://github.com/Ewelina-EN">Ewelina</a> & <a href="https://akademiait.com.pl/">Jacek</a>
+                by <a href="https://github.com/Ewelina-EN" target="_blank">Ewelina</a> & <a
+                    href="https://akademiait.com.pl/" target="_blank">Jacek</a>
                 Ostańscy</a>
             </p>
         </div>
