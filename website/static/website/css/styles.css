@@ -276,6 +276,11 @@ iframe {
   font-family: 'Bebas Neue', sans-serif;
 }
 
+.text-join a:hover {
+  background-color: white;
+  color: black;
+}
+
 .instructors {
   display: flex;
   flex-direction: column;
@@ -593,7 +598,7 @@ footer {
 
   .navigation .mainMenu li a {
     letter-spacing: 0;
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .fa {
@@ -662,20 +667,26 @@ footer {
   }
 
   .instructors ul {
-    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 45px;
   }
 
-  .instructors div {
-    width: 350px;
-    margin: 0 0 0 70px;
-    height: 100%;
+    .instructors ul li div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+    text-align: left;
   }
 
   .instructors ul li {
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 50px 0;
+    height: 345px;
   }
 
    .instructors ul li:last-child{
@@ -687,8 +698,8 @@ footer {
   } */
 
   .instructors ul li img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 
   /* .instructors ul li:nth-child(3) div {
@@ -813,9 +824,34 @@ footer {
     width: 260px;
   }
 
-  .instructors ul {
-    width: 50%;
+  .text a {
+    width: 22%;
   }
+
+  .text-join a {
+    width: 18%;
+  }
+
+  .instructors ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 85px;
+    grid-row-gap: 45px;
+  }
+
+  .instructors ul li{
+    align-items: center;
+  }
+
+  .instructors ul li div {
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  /* .instructors ul li div p {
+    text-align: left;
+  } */
 
   .schedule {
     width: 50%;
@@ -850,12 +886,27 @@ footer {
 @media (min-width: 1700px) {
   .videos {
     width: 60%;
+  } 
+
+  .instructors ul li{
+    flex-direction: row;
+    align-items: flex-start;
+    height: 250px;
+    margin: 50px 0 0 0;
   }
 
-  .instructors ul {
-    width: 30%;
+  .instructors ul li div {
+    align-items: flex-start;;
   }
 
+   .instructors ul li div p {
+    text-align: left;
+  }
+
+  .text-join a {
+    width: 10%;
+  }
+  
   .schedule {
     width: 40%;
     margin: 0 auto;
