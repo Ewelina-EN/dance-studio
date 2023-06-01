@@ -129,6 +129,8 @@ header {
 .header-video {
   margin: 0 auto;
   width: 100%;
+  padding-top: 87px;
+  border-bottom: 1px solid white;
 }
 
 h1 {
@@ -606,7 +608,6 @@ footer {
   }
 
   .header-video {
-    height: 500px;
     object-fit: fill;
     object-position: center;
   }
@@ -640,6 +641,11 @@ footer {
 
   .videos p {
     font-size: 18px;
+  }
+
+  .videos_box {
+    display: flex;
+    flex-direction: row;
   }
 
   iframe {
@@ -805,10 +811,18 @@ footer {
 }
 
 @media (min-width: 1200px) {
+  .header-video {
+    min-height: 700px;
+  }
+
   .offer {
     width: 75%;
     margin: 0 auto;
   }
+
+  .offer h1 {
+    padding: 150px 0 0 0;
+}
 
   .offer ul {
      display: flex;
@@ -822,6 +836,14 @@ footer {
 
   iframe {
     width: 260px;
+  }
+
+  .videos_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
   }
 
   .text a {
@@ -884,9 +906,21 @@ footer {
 }
 
 @media (min-width: 1700px) {
+  .header-video {
+    height: 1100px;
+  }
+
+  .offer h1 {
+    padding: 150px 0 0 0;
+}
+
   .videos {
     width: 60%;
   } 
+
+  .videos_box {
+    width: 70%;
+}
 
   .instructors ul li{
     flex-direction: row;

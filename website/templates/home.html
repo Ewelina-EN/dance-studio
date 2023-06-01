@@ -2,7 +2,6 @@
 {% load static %}
 {% load thumbnail %}
 
-<!-- TODO: style dla tabletów, desktop -->
 
 {% block content %}
 <!-- navigation -->
@@ -34,10 +33,8 @@
     <main>
         <!-- main video -->
         <!-- <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
-            <source src="{% static 'website/media/videos/pyta-winylowa-57307.mp4' %}" type="video/mp4">
-        </video>
-
-        <hr class='line'> -->
+            <source src="{% static 'website/media/videos/web-head.mp4' %}" type="video/mp4">
+        </video> -->
 
         <!-- offer section -->
         <section class='offer' id='offer'>
@@ -62,14 +59,19 @@
             <h1>{{blockWithVideo.title}}</h1>
             <p>{{blockWithVideo.content}}</p>
             <p>{{blockWithVideo.content_extended}}</p>
-            <div>
-                <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"></iframe>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+            <div class='videos_box'>
+                <div>
+                    <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"></iframe>
+                </div>
+                <div><iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <!-- <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div> -->
             </div>
             <div class='text'>
                 <!-- TODO: dodać możliwość edycji tekstu poniżej w panelu aby był inny dla zaprszamy do swiata i osobny dla warsztatów -->
