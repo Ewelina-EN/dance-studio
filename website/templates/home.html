@@ -52,9 +52,11 @@
             </ul>
         </section>
         <hr class='line'>
+
         <!-- classes video section -->
         <!-- TODO: czy można zrobić taki uklad: zapraszamy do swiata tanca/trenerki/warsztaty -->
         {% for blockWithVideo in blocks_with_video %}
+
         <section class='videos' id='videos'>
             <h1>{{blockWithVideo.title}}</h1>
             <p>{{blockWithVideo.content}}</p>
@@ -80,7 +82,7 @@
             </div>
         </section>
         <hr class='line'>
-        {% endfor %}
+        {% if forloop.counter0 == 0 %}
 
         <!-- instructors section-->
         <section class='instructors' id='instructors'>
@@ -89,7 +91,7 @@
                 {% for trainer in trainers %}
                 <li>
                     <!-- {# skalowanie obrazków:
-                    https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
+                            https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
                     {% thumbnail trainer.photo "200x200" as im %}
                     <img src="{{im.url}}" alt="{{trainer.title}}">
                     {% endthumbnail %}
@@ -97,13 +99,16 @@
                         <h2>{{trainer.title}}</h2>
                         <p>{{trainer.content}}</p>
                         <!-- <a href='{{trainer.profile_url}}'>
-                            INSTAGRAM</a> -->
+                                    INSTAGRAM</a> -->
                     </div>
                 </li>
                 {% endfor %}
             </ul>
         </section>
         <hr class='line'>
+        {% endif %}
+        {% endfor %}
+
         <!--schedule section  -->
         <section class='schedule' id='schedule'>
             <h1>GRAFIK</h1>
