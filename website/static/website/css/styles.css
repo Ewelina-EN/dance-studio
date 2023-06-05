@@ -941,9 +941,32 @@ footer {
     height: 1100px;
   }
 
+  .main-header{
+    width: 45%;
+  }
+
   .videos {
     width: 60%;
   } 
+
+  .instructors ul{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instructors ul li{
+    flex-direction: row;
+    align-items: flex-start;
+    height: 250px;
+    margin: 50px 0 0 0;
+  }
+
+  .instructors ul li div {
+    align-items: flex-start;;
+  }
+
+   .instructors ul li div p {
+    text-align: left;
+  }
 
   .text-join a {
     width: 10%;
@@ -960,5 +983,13 @@ footer {
 
   .nav-footer {
     justify-content: space-between;
+  }
+}
+
+@media (min-width: 1800px) {
+  .instructors ul{
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 25px;
   }
 }
