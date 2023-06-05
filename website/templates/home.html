@@ -34,8 +34,18 @@
         <!-- main video -->
         <!-- <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
             <source src="{% static 'website/media/videos/web-head.mp4' %}" type="video/mp4">
+            TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster
+            Load video: https://stackoverflow.com/questions/75295842/provide-a-different-video-depending-on-the-screen-size-html 
+            https://codepen.io/fuzzywalrus/pen/jgLWzN/x
         </video> -->
-
+        <hr class='line'>
+        <!-- header content section -->
+        <section class='main-header'>
+            {% for headerContent in header_content %}
+            <p> {{headerContent.content}}</p>
+            {% endfor %}
+        </section>
+        <hr class='line'>
         <!-- offer section -->
         <section class='offer' id='offer'>
             <h1>OFERTA</h1>
@@ -52,8 +62,8 @@
             </ul>
         </section>
         <hr class='line'>
+
         <!-- classes video section -->
-        <!-- TODO: czy można zrobić taki uklad: zapraszamy do swiata tanca/trenerki/warsztaty -->
         {% for blockWithVideo in blocks_with_video %}
         <section class='videos' id='videos'>
             <h1>{{blockWithVideo.title}}</h1>
@@ -80,7 +90,7 @@
             </div>
         </section>
         <hr class='line'>
-        {% endfor %}
+        {% if forloop.counter0 == 0 %}
 
         <!-- instructors section-->
         <section class='instructors' id='instructors'>
@@ -89,7 +99,7 @@
                 {% for trainer in trainers %}
                 <li>
                     <!-- {# skalowanie obrazków:
-                    https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
+                            https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
                     {% thumbnail trainer.photo "200x200" as im %}
                     <img src="{{im.url}}" alt="{{trainer.title}}">
                     {% endthumbnail %}
@@ -97,13 +107,16 @@
                         <h2>{{trainer.title}}</h2>
                         <p>{{trainer.content}}</p>
                         <!-- <a href='{{trainer.profile_url}}'>
-                            INSTAGRAM</a> -->
+                                    INSTAGRAM</a> -->
                     </div>
                 </li>
                 {% endfor %}
             </ul>
         </section>
         <hr class='line'>
+        {% endif %}
+        {% endfor %}
+
         <!--schedule section  -->
         <section class='schedule' id='schedule'>
             <h1>GRAFIK</h1>
@@ -131,11 +144,8 @@
                 <p>Beginners - poziom początkujący. <br> Advanced - poziom zaawansowany. <br> Open - zajęcia dla osób,
                     na każdym poziomie umiejętności</p>
             </div>
-
         </section>
-
         <hr class='line'>
-
         <!-- prices section -->
         <section class='prices' id='prices'>
             <h1>CENNIK</h1>
