@@ -34,9 +34,18 @@
         <!-- main video -->
         <!-- <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
             <source src="{% static 'website/media/videos/web-head.mp4' %}" type="video/mp4">
+            TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster
+            Load video: https://stackoverflow.com/questions/75295842/provide-a-different-video-depending-on-the-screen-size-html 
+            https://codepen.io/fuzzywalrus/pen/jgLWzN/x
         </video> -->
-
+        <section>
+            <p></p>
+        </section>
+        <hr class='line'>
         <!-- offer section -->
+        <section>
+            <h1>Krótki opis</h1>
+        </section>
         <section class='offer' id='offer'>
             <h1>OFERTA</h1>
             <ul>
@@ -54,9 +63,7 @@
         <hr class='line'>
 
         <!-- classes video section -->
-        <!-- TODO: czy można zrobić taki uklad: zapraszamy do swiata tanca/trenerki/warsztaty -->
         {% for blockWithVideo in blocks_with_video %}
-
         <section class='videos' id='videos'>
             <h1>{{blockWithVideo.title}}</h1>
             <p>{{blockWithVideo.content}}</p>
@@ -136,11 +143,8 @@
                 <p>Beginners - poziom początkujący. <br> Advanced - poziom zaawansowany. <br> Open - zajęcia dla osób,
                     na każdym poziomie umiejętności</p>
             </div>
-
         </section>
-
         <hr class='line'>
-
         <!-- prices section -->
         <section class='prices' id='prices'>
             <h1>CENNIK</h1>
