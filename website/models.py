@@ -63,3 +63,7 @@ class ScheduleItem(BasicModel):
 
     class Meta:
         ordering = ["start_time"]
+
+
+class HeaderContent(BasicModel):
+    content = models.CharField(max_length=255)
