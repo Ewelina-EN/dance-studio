@@ -33,7 +33,7 @@ if not os.environ.get("IS_PRODUCTION"):
         "127.0.0.1",
     ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media", "media")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -93,6 +93,8 @@ WSGI_APPLICATION = "django_in_one_hour.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+ADMINS = [("Jacek", "jacek@ostanski.com")]
+
 if not os.environ.get("IS_PRODUCTION"):
     DATABASES = {
         "default": {
@@ -109,7 +111,12 @@ else:
             "PASSWORD": os.environ["OCCGKMVHZA_CHERNIKA_PASSWORD"],
             "HOST": "localhost",
             "PORT": "3306",
-            "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
+            "OPTIONS": {
+                "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+                "charset": "utf8mb4",
+                # not a valid argunemt
+                # "collation": "utf8mb4_unicode_ci",
+            },
         }
     }
 
@@ -149,7 +156,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "media", "static")
 
 
 # Default primary key field type
@@ -162,5 +169,5 @@ if os.environ.get("IS_PRODUCTION"):
     ALLOWED_HOSTS = [
         "chernikastudio.pl",
     ]
-    STATIC_URL = "https://static.chernikastudio.pl/"
-    MEDIA_URL = "https://media.chernikastudio.pl/"
+    MEDIA_URL = "https://media.chernikastudio.pl/media/"
+    STATIC_URL = "https://media.chernikastudio.pl/static/"
