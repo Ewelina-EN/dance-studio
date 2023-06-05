@@ -38,14 +38,15 @@
             Load video: https://stackoverflow.com/questions/75295842/provide-a-different-video-depending-on-the-screen-size-html 
             https://codepen.io/fuzzywalrus/pen/jgLWzN/x
         </video> -->
-        <section>
-            <p></p>
+        <hr class='line'>
+        <!-- header content section -->
+        <section class='main-header'>
+            {% for headerContent in header_content %}
+            <p> {{headerContent.content}}</p>
+            {% endfor %}
         </section>
         <hr class='line'>
         <!-- offer section -->
-        <section>
-            <h1>Krótki opis</h1>
-        </section>
         <section class='offer' id='offer'>
             <h1>OFERTA</h1>
             <ul>

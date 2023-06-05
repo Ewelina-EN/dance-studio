@@ -122,7 +122,7 @@ header {
   width: 100%;
   height: 1px;
   background-color: white;
-  margin: 0;
+  margin: 50px 0;
 }
 
 /* big video */
@@ -131,6 +131,14 @@ header {
   width: 100%;
   padding-top: 87px;
   border-bottom: 1px solid white;
+}
+
+.main-header{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 100;
 }
 
 h1 {
@@ -559,6 +567,12 @@ footer {
   cursor: pointer;
 }
 
+@media (min-width: 400px) {
+.mainMenu {
+    height: 50%;
+  }
+}
+
 @media (min-width: 700px) {
   h1 {
     font-size: 40px;
@@ -566,7 +580,7 @@ footer {
   }
 
   .line {
-  margin: 70px 0;
+    margin: 70px 0;
   }
 
   .navigation .openMenu {
@@ -612,13 +626,18 @@ footer {
     object-position: center;
   }
 
+  .main-header{
+    width: 50%;
+    font-size: 20px;
+  }
+
   .offer {
     width: 100%;
     margin-bottom: 30px;
   }
 
   .offer h1 {
-    padding: 100px 0 0 0;
+    padding: 0;
   }
 
   .offer h4 {
@@ -815,23 +834,26 @@ footer {
     min-height: 700px;
   }
 
+  .main-header{
+    font-size: 23px;
+  }
+
   .offer {
     width: 75%;
     margin: 0 auto;
   }
 
   .offer h1 {
-    padding: 150px 0 0 0;
-}
+    padding:0;
+  }
 
   .offer ul {
-     display: flex;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 0;
   }
 
   .offer ul li{
-    width: 325px;
+    width: 280px;
   }
 
   iframe {
@@ -843,7 +865,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 75%;
+    width: 65%;
   }
 
   .text a {
@@ -905,37 +927,23 @@ footer {
   }
 }
 
+
+@media (min-width: 1300px) {
+    .offer ul {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 0;
+    }
+}
+
+
 @media (min-width: 1700px) {
   .header-video {
     height: 1100px;
   }
 
-  .offer h1 {
-    padding: 150px 0 0 0;
-}
-
   .videos {
     width: 60%;
   } 
-
-  .videos_box {
-    width: 70%;
-}
-
-  .instructors ul li{
-    flex-direction: row;
-    align-items: flex-start;
-    height: 250px;
-    margin: 50px 0 0 0;
-  }
-
-  .instructors ul li div {
-    align-items: flex-start;;
-  }
-
-   .instructors ul li div p {
-    text-align: left;
-  }
 
   .text-join a {
     width: 10%;
