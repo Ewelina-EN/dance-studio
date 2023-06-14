@@ -7,7 +7,7 @@
 <!-- navigation -->
 <header>
     <div class='logo'>
-        <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt="">
+        <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt="company logo">
     </div>
     <nav class='navigation'>
         <div class='openMenu'><i class='fa fa-bars'></i></div>
@@ -192,20 +192,25 @@
     </main>
     <footer id='contact'>
         <div class='nav-footer'>
+            <div class='footer-logo'>
+                <div class='footer-line'></div>
+                <img src="{% static 'website/media/icons/logo3.jpeg' %}">
+                <div class='footer-line'></div>
+            </div>
             <nav>
                 <ul>
-                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <h3>Adres</h3>
-                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
-                    </li>
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <h3>Telefon</h3>
                         <p> <a href="tel:+48790318971">{{contact.phone}}</a></p>
                     </li>
+                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <h3>Adres</h3>
+                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
+                    </li>
                     <li><i class="fa-solid fa-envelope"></i>
                         <h3>E-mail</h3>
-                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio@gmail.com</a>
+                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio<br>@gmail.com</a>
                     </li>
                 </ul>
             </nav>
@@ -213,6 +218,8 @@
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
                     <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook '></i></a>
+                    <a href="{{contact.facebook}}" target="_blank"><i class="fa-brands fa-youtube"
+                            style="color: #ffffff;"></i></a>
                     <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
                 </span>
             </div>
