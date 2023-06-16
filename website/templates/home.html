@@ -7,13 +7,13 @@
 <!-- navigation -->
 <header>
     <div class='logo'>
-        <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt="">
+        <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt="company logo">
     </div>
     <nav class='navigation'>
         <div class='openMenu'><i class='fa fa-bars'></i></div>
         <ul class='mainMenu'>
             <li><a href="/" class='link'>HOME</a></li>
-            <li><a href="#offer" class='link'>OFERTA</a></li>
+            <li><a href="#offer" class='link'>ZAJĘCIA</a></li>
             <li><a href="#instructors" class='link'>TRENERKI</a></li>
             <li><a href="#schedule" class='link'>GRAFIK</a></li>
             <li><a href="#prices" class='link'>CENNIK</a></li>
@@ -32,23 +32,25 @@
 <body>
     <main>
         <!-- main video -->
-        <!-- <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
-            <source src="{% static 'website/media/videos/web-head.mp4' %}" type="video/mp4">
-            TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster
-            Load video: https://stackoverflow.com/questions/75295842/provide-a-different-video-depending-on-the-screen-size-html 
-            https://codepen.io/fuzzywalrus/pen/jgLWzN/x
-        </video> -->
-        <hr class='line'>
+        <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
+            <source src="{% static 'website/media/videos/web-head.m4v' %}" type="video/mp4">
+            <!-- TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster
+            Load video:
+            https://stackoverflow.com/questions/75295842/provide-a-different-video-depending-on-the-screen-size-html
+            https://codepen.io/fuzzywalrus/pen/jgLWzN/x -->
+        </video>
         <!-- header content section -->
         <section class='main-header'>
+            <h1>O NAS</h1>
             {% for headerContent in header_content %}
             <p> {{headerContent.content}}</p>
             {% endfor %}
         </section>
+
         <hr class='line'>
         <!-- offer section -->
         <section class='offer' id='offer'>
-            <h1>OFERTA</h1>
+            <h1>ZAJĘCIA</h1>
             <ul>
                 {% for offer in offers %}
                 <li>
@@ -79,9 +81,6 @@
                 <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe></div>
-                <!-- <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe></div> -->
             </div>
             <div class='text'>
                 <!-- TODO: dodać możliwość edycji tekstu poniżej w panelu aby był inny dla zaprszamy do swiata i osobny dla warsztatów -->
@@ -89,26 +88,20 @@
                 <a href="https://www.instagram.com/chernika_studio.pl/" target="_blank">SPRAWDŹ NASZ INSTAGRAM</a>
             </div>
         </section>
-        <hr class='line'>
         {% if forloop.counter0 == 0 %}
 
-        <!-- instructors section-->
-        <section class='instructors' id='instructors'>
+        <img class='photo' src="{% static 'website/media/gallery/photo.JPG' %}" alt='chernika photo'>
+
+        <section class='offer' id='instructors'>
             <h1>TRENERKI</h1>
             <ul>
                 {% for trainer in trainers %}
                 <li>
-                    <!-- {# skalowanie obrazków:
-                            https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
                     {% thumbnail trainer.photo "200x200" as im %}
                     <img src="{{im.url}}" alt="{{trainer.title}}">
                     {% endthumbnail %}
-                    <div>
-                        <h2>{{trainer.title}}</h2>
-                        <p>{{trainer.content}}</p>
-                        <!-- <a href='{{trainer.profile_url}}'>
-                                    INSTAGRAM</a> -->
-                    </div>
+                    <h4>{{trainer.title}}</h4>
+                    <p>{{trainer.content}}</p>
                 </li>
                 {% endfor %}
             </ul>
@@ -116,6 +109,8 @@
         <hr class='line'>
         {% endif %}
         {% endfor %}
+
+        <img class='photo' src="{% static 'website/media/gallery/photo2.JPG' %}" alt='chernika photo'>
 
         <!--schedule section  -->
         <section class='schedule' id='schedule'>
@@ -168,44 +163,55 @@
         </section>
         <!-- dance space to rental -->
         <div class='lessons'>
-            <h2>OFERTA WYNAJMU SALI</h2>
-            <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
-                Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
-                Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy przestronną
-                salę z
-                drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z profesjonalnym
-                nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne, treningi,
-                próby i
-                inne.
-            </p>
-            <p>Jeśli szukasz sali, by
-                poćwiczyć solo lub z partnerem <a href="mailto:info.chernikastudio@gmail.com"
-                    target="_blank"><br><strong>NAPISZ DO
-                        NAS</strong></a> lub <a href="tel:+48790318971" target="_blank"><strong>ZADZWOŃ</strong></a></p>
+            <img class='gym-photo' src="{% static 'website/media/gallery/training-room.jpg' %}" alt='training room'>
+            <div>
+                <h2>WYNAJEM SALI</h2>
+                <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
+                    Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
+                    Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy
+                    przestronną
+                    salę z
+                    drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z
+                    profesjonalnym
+                    nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne,
+                    treningi,
+                    próby i
+                    inne.
+                </p>
+                <p>Jeśli szukasz sali, by
+                    poćwiczyć solo lub z partnerem
+                    <a href="mailto:info.chernikastudio@gmail.com" target="_blank"><br><strong>NAPISZ DO
+                            NAS</strong></a> lub <a href="tel:+48790318971" target="_blank"><strong>ZADZWOŃ</strong></a>
+                </p>
+            </div>
         </div>
-        <hr class='line'>
         <!-- short text -->
         <div class='text-join'>
             <p>Odkryj przyjemność z tańca</p>
-            <a href="https://www.instagram.com/" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
+            <a href="{{contact.instagram}}" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
         </div>
     </main>
-    <footer id='contact'>
-        <div class='nav-footer'>
+    <footer>
+        <div class='nav-footer' id='contact'>
+            <div class='footer-logo'>
+                <div class='footer-line'></div>
+                <img src="{% static 'website/media/icons/logo3.jpeg' %}">
+                <div class='footer-line'></div>
+            </div>
             <nav>
                 <ul>
-                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <h3>Adres</h3>
-                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
-                    </li>
                     <li>
                         <i class="fa-solid fa-phone"></i>
                         <h3>Telefon</h3>
                         <p> <a href="tel:+48790318971">{{contact.phone}}</a></p>
                     </li>
+                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <h3>Adres</h3>
+                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
+                    </li>
                     <li><i class="fa-solid fa-envelope"></i>
                         <h3>E-mail</h3>
-                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio@gmail.com</a>
+                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio<br>@gmail.com</a>
                     </li>
                 </ul>
             </nav>
@@ -213,6 +219,8 @@
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
                     <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook '></i></a>
+                    <a href="{{contact.facebook}}" target="_blank"><i class="fa-brands fa-youtube"
+                            style="color: #ffffff;"></i></a>
                     <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
                 </span>
             </div>
