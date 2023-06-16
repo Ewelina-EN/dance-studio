@@ -41,10 +41,12 @@
         </video>
         <!-- header content section -->
         <section class='main-header'>
+            <h1>O NAS</h1>
             {% for headerContent in header_content %}
             <p> {{headerContent.content}}</p>
             {% endfor %}
         </section>
+
         <hr class='line'>
         <!-- offer section -->
         <section class='offer' id='offer'>
@@ -90,23 +92,16 @@
 
         <img class='photo' src="{% static 'website/media/gallery/photo.JPG' %}" alt='chernika photo'>
 
-        <!-- instructors section-->
-        <section class='instructors' id='instructors'>
+        <section class='offer' id='instructors'>
             <h1>TRENERKI</h1>
             <ul>
                 {% for trainer in trainers %}
                 <li>
-                    <!-- {# skalowanie obrazków:
-                            https://sorl-thumbnail.readthedocs.io/en/latest/examples.html#template-examples #} -->
                     {% thumbnail trainer.photo "200x200" as im %}
                     <img src="{{im.url}}" alt="{{trainer.title}}">
                     {% endthumbnail %}
-                    <div>
-                        <h2>{{trainer.title}}</h2>
-                        <p>{{trainer.content}}</p>
-                        <!-- <a href='{{trainer.profile_url}}'>
-                                    INSTAGRAM</a> -->
-                    </div>
+                    <h4>{{trainer.title}}</h4>
+                    <p>{{trainer.content}}</p>
                 </li>
                 {% endfor %}
             </ul>
@@ -193,7 +188,7 @@
         <!-- short text -->
         <div class='text-join'>
             <p>Odkryj przyjemność z tańca</p>
-            <a href="https://www.instagram.com/" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
+            <a href="{{contact.instagram}}" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
         </div>
     </main>
     <footer>
