@@ -20,7 +20,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  border-bottom: 1px solid white;
   position: fixed;
   top: 0;
   left: 0;
@@ -122,15 +121,13 @@ header {
   width: 100%;
   height: 1px;
   background-color: white;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
 }
 
 /* big video */
 .header-video {
-  margin: 0 auto;
   width: 100%;
-  padding-top: 87px;
-  border-bottom: 1px solid white;
+  margin: 85px 0 40px 0;
 }
 
 .main-header{
@@ -145,8 +142,8 @@ h1 {
   font-size: 35px;
   font-weight: bold;
   letter-spacing: 2px;
-  padding: 100px 0 0 0;
   font-family: 'Bebas Neue', sans-serif;
+  padding-top: 100px;
 }
 
 .offer {
@@ -226,6 +223,11 @@ iframe {
   margin: 20px 0;
 }
 
+.photo{
+  max-width: 100%;
+  height: auto;
+}
+
 .text {
   text-align: center;
   font-size: 25px;
@@ -296,7 +298,6 @@ iframe {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 20px;
 }
 
 .instructors ul li {
@@ -402,9 +403,9 @@ td {
   margin: 25px 0;
 }
 
-.schedule-info p:last-child{
+/* .schedule-info p:last-child{
   margin-bottom: 100px;
-}
+} */
 
 .hour{
   width: 80px;
@@ -476,13 +477,32 @@ td {
 }
 
 .lessons {
-  width: 80%;
+  /* width: 80%;
   margin: 40px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center; */
+  display: inline-block;
+  position: relative;
+  margin: 40px 0 0 0;
+}
+
+.gym-photo{
+  max-width: 100%;
+  height: 540px;
+  display: block;
+}
+
+.lessons div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .lessons h2 {
@@ -500,11 +520,10 @@ td {
 .lessons p:last-child {
   color: white;
   font-size: 20px;
-  margin: 25px 0 30px 0;
+  margin: 25px 0 0 0;
 }
 
 .lessons a {
-  text-decoration: none;
   color: white;
 }
 
@@ -517,6 +536,7 @@ td {
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding-top: 65px;
 }
 
 .footer-line{
