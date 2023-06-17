@@ -59,6 +59,7 @@ class ContactData(BasicModel):
     phone = models.CharField(max_length=255)
     facebook = models.URLField()
     instagram = models.URLField()
+    youtube = models.URLField()
 
 
 class WeekDay(BasicModel):
