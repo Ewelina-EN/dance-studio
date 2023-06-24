@@ -50,7 +50,7 @@ class PriceList(BasicModel):
     content_2 = models.CharField(max_length=255)
     content_3 = models.CharField(max_length=255)
     content_4 = models.CharField(max_length=255)
-    price = models.FloatField("cena")
+    price = models.CharField(max_length=255)
 
 
 class ContactData(BasicModel):
