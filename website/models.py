@@ -38,6 +38,9 @@ class BlockWithVideo(BasicModel):
     video_iframe_src_url_1 = models.URLField()
     video_iframe_src_url_2 = models.URLField()
     video_iframe_src_url_3 = models.URLField()
+    video_iframe_src_url_4 = models.URLField()
+    content_button = models.CharField(max_length=100, blank=True)
+    button = models.CharField(max_length=50, blank=True)
 
 
 class Trainer(BasicModel):
@@ -50,7 +53,7 @@ class PriceList(BasicModel):
     content_2 = models.CharField(max_length=255)
     content_3 = models.CharField(max_length=255)
     content_4 = models.CharField(max_length=255)
-    price = models.FloatField("cena")
+    price = models.CharField(max_length=255)
 
 
 class ContactData(BasicModel):
@@ -59,6 +62,7 @@ class ContactData(BasicModel):
     phone = models.CharField(max_length=255)
     facebook = models.URLField()
     instagram = models.URLField()
+    youtube = models.URLField()
 
 
 class WeekDay(BasicModel):

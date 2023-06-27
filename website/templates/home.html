@@ -7,7 +7,9 @@
 <!-- navigation -->
 <header>
     <div class='logo'>
-        <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt="company logo">
+        <a href="https://chernikastudio.pl/"><img src="{% static 'website/media/icons/logo3.jpeg' %}"
+                alt="company logo"></a>
+
     </div>
     <nav class='navigation'>
         <div class='openMenu'><i class='fa fa-bars'></i></div>
@@ -73,19 +75,26 @@
             <p>{{blockWithVideo.content_extended}}</p>
             <div class='videos_box'>
                 <div>
-                    <iframe src=" {{blockWithVideo.video_iframe_src_url_1}}"></iframe>
+                    <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <div><iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe></div>
+                        allowfullscreen></iframe>
+                </div>
                 <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                        allowfullscreen></iframe>
+                </div>
+                <div><iframe src="{{blockWithVideo.video_iframe_src_url_4}}" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe></div>
+                        allowfullscreen></iframe>
+                </div>
             </div>
             <div class='text'>
-                <!-- TODO: dodać możliwość edycji tekstu poniżej w panelu aby był inny dla zaprszamy do swiata i osobny dla warsztatów -->
-                <p>Chcesz zobaczyć więcej?</p>
-                <a href="https://www.instagram.com/chernika_studio.pl/" target="_blank">SPRAWDŹ NASZ INSTAGRAM</a>
+                <p>{{blockWithVideo.content_button}}</p>
+                <a href="https://www.instagram.com/chernika_studio.pl/" target="_blank">{{blockWithVideo.button}}</a>
             </div>
         </section>
         {% if forloop.counter0 == 0 %}
@@ -155,7 +164,7 @@
                             <li>{{priceList.content_3}}</li>
                             <li>{{priceList.content_4}}</li>
                         </ul>
-                        <p>{{priceList.price|floatformat:"0"}}</p>
+                        <p>{{priceList.price}}</p>
                     </li>
                     {% endfor %}
                 </ul>
@@ -195,7 +204,7 @@
         <div class='nav-footer' id='contact'>
             <div class='footer-logo'>
                 <div class='footer-line'></div>
-                <img src="{% static 'website/media/icons/logo3.jpeg' %}">
+                <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt='logo icon'>
                 <div class='footer-line'></div>
             </div>
             <nav>
@@ -219,7 +228,7 @@
                 <h2>Bądź na bieżąco!</h2>
                 <span class='icons'>
                     <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook '></i></a>
-                    <a href="{{contact.facebook}}" target="_blank"><i class="fa-brands fa-youtube"
+                    <a href="{{contact.youtube}}" target="_blank"><i class="fa-brands fa-youtube"
                             style="color: #ffffff;"></i></a>
                     <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
                 </span>

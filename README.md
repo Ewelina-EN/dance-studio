@@ -6,8 +6,8 @@ pipenv install django
 pipenv shell
 django-admin startproject django_in_one_hour
 python manage.py startapp notes
-python manage.py migrate
 python manage.py makemigrations
+python manage.py migrate
 
 https://tinyurl.com/django-ankieta
 

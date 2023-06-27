@@ -7,8 +7,6 @@
 body {
   background-color: black;
   color: white;
-  /* font-family: 'Thasadith', sans-serif; */
-  font-family: "Oswald", sans-serif;
 }
 
 /* navigation */
@@ -27,7 +25,7 @@ header {
   right: 0;
   z-index: 999;
   border-bottom: 1px solid white;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .logo img {
@@ -140,14 +138,14 @@ header {
   font-family: 'Thasadith', sans-serif;
 }
 
-.main-header h1{
+.main-header h1 {
   padding-top: 0;
   margin-bottom: 10px;
 }
 
-.main-header p{
+.main-header p {
   margin-bottom: 60px;
-  line-height: 35px;
+  line-height: 25px;
 }
 
 h1 {
@@ -187,15 +185,15 @@ h1 {
 
 .offer ul li h4 {
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: bold;
   font-size: 25px;
+  letter-spacing: 2px;
 }
 
 .offer ul li p {
-  margin: 10px 50px;
-  font-weight: 300;
+  margin: 10px;
   color: rgb(184, 184, 184);
   font-size: 18px;
+  font-family: 'Thasadith', sans-serif;
 }
 
 .videos {
@@ -207,13 +205,12 @@ h1 {
   text-align: center;
 }
 
-.videos div{
+.videos div {
   margin-top: 20px;
 }
 
 .videos p {
   text-align: center;
-  font-weight: 200;
   margin: 0 30px;
   color: rgb(184, 184, 184);
   font-size: 18px;
@@ -235,7 +232,7 @@ iframe {
   margin: 20px 0;
 }
 
-.photo{
+.photo {
   max-width: 100%;
   height: auto;
 }
@@ -248,10 +245,11 @@ iframe {
 
 .text p {
   text-align: center;
-  margin: 10px 30px 20px 30px;
+  margin: 30px 20px;
   color: rgb(184, 184, 184);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 25px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: 'Thasadith', sans-serif;
 }
 
 .text a {
@@ -261,11 +259,12 @@ iframe {
   cursor: pointer;
   border: 1px solid white;
   padding: 10px 15px;
-  margin: 0 auto;
+  margin: 0 50px;
   font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 
-.join{
+.join {
   width: 60%;
 }
 
@@ -274,7 +273,7 @@ iframe {
   color: black;
 }
 
-.text-join{
+.text-join {
   text-align: center;
   font-size: 25px;
   margin: 60px 0;
@@ -284,7 +283,7 @@ iframe {
   text-align: center;
   margin: 10px 30px 20px 30px;
   color: rgb(184, 184, 184);
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Thasadith', sans-serif;
   font-size: 25px;
 }
 
@@ -313,7 +312,6 @@ iframe {
 .schedule h1 {
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: bold;
 }
 
 .schedule table {
@@ -328,6 +326,7 @@ iframe {
 th {
   padding: 10px;
   border-bottom: 1px solid rgb(139, 139, 139);
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 td {
@@ -337,6 +336,9 @@ td {
 .schedule th {
   text-align: left;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
 }
 
 .workout {
@@ -346,18 +348,20 @@ td {
 
 .sch-instructor {
   text-align: right;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 .schedule-info p {
   margin: 25px 0;
+  font-family: 'Thasadith', sans-serif;
 }
 
-/* .schedule-info p:last-child{
-  margin-bottom: 100px;
-} */
-
-.hour{
+.hour {
   width: 80px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
 }
 
 .prices {
@@ -396,11 +400,11 @@ td {
 }
 
 .prices ul li h2 {
-  line-height: 30px;
   text-transform: uppercase;
   width: 250px;
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 27px;
 }
 
 .prices-info {
@@ -417,6 +421,8 @@ td {
 
 .prices-list p {
   font-size: 35px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
 }
 
 .prices-list .prices-list-text {
@@ -433,13 +439,13 @@ td {
   font-family: 'Thasadith', sans-serif;
 }
 
-.gym-photo{
+.gym-photo {
   max-width: 100%;
   height: 540px;
   display: block;
 }
 
-.lessons div{
+.lessons div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -452,7 +458,6 @@ td {
 .lessons h2 {
   margin-bottom: 25px;
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: bold;
 }
 
 .lessons p {
@@ -471,11 +476,7 @@ td {
   color: white;
 }
 
-/* footer {
-  border-top: 1px solid white;
-} */
-
-.footer-logo{
+.footer-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -483,7 +484,7 @@ td {
   padding-top: 65px;
 }
 
-.footer-line{
+.footer-line {
   flex-grow: 1;
   height: 1px;
   background-color: white;
@@ -513,13 +514,7 @@ td {
   letter-spacing: 0.5px;
   margin: 5px 0;
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: bold;
 }
-
-/* .nav-footer img {
-  width: 30px;
-  height: 30px;
-} */
 
 .nav-footer a {
   text-decoration: none;
@@ -527,7 +522,7 @@ td {
   font-family: 'Thasadith', sans-serif;
 }
 
-.nav-footer p{
+.nav-footer p {
   font-family: 'Thasadith', sans-serif;
 }
 
@@ -537,8 +532,9 @@ td {
   cursor: pointer;
 }
 
-.social h2{
+.social h2 {
   margin: 20px 0;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .social span a i {
@@ -551,6 +547,7 @@ td {
   letter-spacing: 1px;
   margin: 15px 0;
   text-align: center;
+  font-family: 'Thasadith', sans-serif;
 }
 
 .author a {
@@ -560,19 +557,27 @@ td {
 }
 
 @media (min-width: 400px) {
-.mainMenu {
+  .mainMenu {
     height: 50%;
+  }
+
+  .mainMenu li {
+    padding: 0 10px 0 0;
   }
 }
 
 @media (min-width: 700px) {
+  .logo img {
+    width: 80px;
+  }
+
   h1 {
     font-size: 40px;
     padding: 0;
   }
 
   .line {
-    margin: 70px 0;
+    margin: 110px 0;
   }
 
   .navigation .openMenu {
@@ -605,7 +610,7 @@ td {
   }
 
   .navigation .mainMenu li a {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: 20px;
   }
 
@@ -618,8 +623,8 @@ td {
     object-position: center;
   }
 
-  .main-header{
-    width: 50%;
+  .main-header {
+    width: 70%;
     font-size: 20px;
   }
 
@@ -636,7 +641,7 @@ td {
     font-size: 20px;
   }
 
-  .offer ul{
+  .offer ul {
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 0;
   }
@@ -644,7 +649,6 @@ td {
   .offer ul li p {
     margin: 10px 15px;
     font-size: 17px;
-    font-family: 'Thasadith', sans-serif;
   }
 
   .videos h1 {
@@ -652,7 +656,7 @@ td {
   }
 
   .videos p {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .videos_box {
@@ -668,20 +672,22 @@ td {
     margin: 50px 0;
   }
 
-  .text{
+  .text {
     margin: 0;
     width: 100%;
     padding: 0;
   }
 
-  .text p{
-    font-size: 25px;
+  .text p {
+    font-size: 22px;
+    letter-spacing: 0;
   }
 
-  .text a{
+  .text a {
     width: 35%;
     font-size: 25px;
     padding: 20px 25px;
+    margin: 0 auto;
   }
 
   .schedule {
@@ -689,11 +695,11 @@ td {
     margin: 0 auto;
   }
 
-  .schedule-info p:last-child{
+  .schedule-info p:last-child {
     margin-bottom: 0;
   }
 
-  .hour{
+  .hour {
     width: 140px;
   }
 
@@ -719,15 +725,16 @@ td {
     margin: 0;
   }
 
-  .prices ul li h2 {
+   .prices ul li h2 {
     width: auto;
+    margin: 0 15px;
   }
 
-  .gym-photo{
-    height: auto;
+  .gym-photo {
+    height: 350px;
   }
 
-  .lessons{
+  .lessons {
     margin: 50px auto 0 auto;
   }
 
@@ -735,11 +742,15 @@ td {
     font-size: 18px;
   }
 
-  .lessons p:last-child{
+  .lessons p:last-child {
     margin: 25px 0 0 0;
   }
 
-  .text-join a{
+  .lessons div {
+    padding: 10px;
+  }
+
+  .text-join a {
     width: 30%;
   }
 
@@ -752,10 +763,9 @@ td {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* margin: 50px 40px; */
   }
 
-  .nav-footer nav{
+  .nav-footer nav {
     width: 80%;
   }
 
@@ -768,18 +778,13 @@ td {
     margin: 50px 0;
   }
 
-  /* .nav-footer nav ul li {
-    margin: 0 30px 0 0;
-  } */
-
-  .nav-footer nav ul li:nth-child(2){
+  .nav-footer nav ul li:nth-child(2) {
     margin-left: 45px;
   }
 
-  .footer-logo{
+  .footer-logo {
     padding-top: 0;
   }
-
 
   .footer-logo img {
     width: 110px;
@@ -787,15 +792,15 @@ td {
     margin: 0 25px;
   }
 
-  .social span{
+  .social span {
     width: 35%;
   }
 
-  .social h2{
+  .social h2 {
     margin-bottom: 30px;
   }
 
-  .icons{
+  .icons {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -803,7 +808,7 @@ td {
     margin: 0 auto;
   }
 
-  .icons i{
+  .icons i {
     font-size: 30px;
   }
 
@@ -817,15 +822,23 @@ td {
   }
 }
 
-@media (min-width: 700px){
-  .main-header{
+@media (max-width: 700px){
+  .main-header {
     width: 70%;
   }
 }
 
 @media (min-width: 820px){
-  .nav-footer nav{
+  .nav-footer nav {
     width: 60%;
+  }
+
+  .main-header p {
+    line-height: 35px;
+  }
+
+  .gym-photo {
+    height: auto;
   }
 }
 
@@ -833,15 +846,24 @@ td {
   .header-video {
     height: 550px;
   }
+  
+  .line {
+    margin: 165px 0;
+  }
 
-  .main-header{
+  .mainMenu li {
+    padding: 0 10px;
+  }
+
+  .main-header {
     margin: 50px auto 100px auto;
     font-size: 21px;
   }
 
-  .main-header p{
-    width: 700px;
+  .main-header p {
+    width: 850px;
     margin: 0 auto;
+    line-height: 35px;
   }
 
   .offer {
@@ -850,22 +872,22 @@ td {
   }
 
   .offer h1 {
-    padding:0;
+    padding: 0;
   }
 
   iframe {
-    width: 260px; */
+    width: 260px;
   }
 
   .videos_box {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .text a {
-    width: 22%;
+    width: 35%;
   }
 
   .text-join a {
@@ -890,12 +912,12 @@ td {
   }
 
   .lessons h2 {
-  font-size: 40px;
-}
+    font-size: 40px;
+  }
 
-.lessons p {
-  font-size: 20px;
-}
+  .lessons p {
+    font-size: 20px;
+  }
 
   .nav-footer {
     justify-content: space-between;
@@ -926,12 +948,24 @@ td {
       grid-template-columns: repeat(4, 1fr);
       margin-bottom: 0;
     }
+
+    .text a {
+      width: 25%;
+    }
+
+    .videos_box {
+    width: 90%;
+  }
 }
 
 @media (min-width: 1500px) {
     .header-video {
       height: 600px;
     } 
+
+    /* .videos div {
+      margin-top: 90px;
+    } */
 
     .photo,
     .gym-photo {
@@ -941,10 +975,10 @@ td {
       justify-content: center;
       width: 1500px;
       height: auto;
-      margin: 50px auto;
+      margin: 165px auto;
     }
 
-    .lessons{
+    .lessons {
       display: flex;
     }
 }
@@ -961,7 +995,7 @@ td {
     height: 900px;
   } 
 
-  .main-header{
+  .main-header {
     width: 45%;
   }
 
@@ -978,7 +1012,7 @@ td {
     margin: 0 auto;
   }
 
-  .prices{
+  .prices {
     width: 80%;
   }
 
@@ -986,16 +1020,20 @@ td {
     width: 50%;
   }
 
+  .text-join {
+    margin: 0 0 100px 0;
+  }
+
   .nav-footer {
     justify-content: space-between;
   }
 
-  .footer-logo img{
+  .footer-logo img {
     width: 150px;
     height: 150px;
   }
 
-  .nav-footer nav{
+  .nav-footer nav {
     margin: 40px 0;
   }
 
@@ -1008,5 +1046,10 @@ td {
 @media (min-width: 1800px) {
     .header-video {
       height: 1000px;
-    } 
+    }
+}
+
+.ytp-title-link 
+.yt-uix-sessionlink {
+  display: none;
 }
