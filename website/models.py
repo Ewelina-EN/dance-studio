@@ -38,6 +38,9 @@ class BlockWithVideo(BasicModel):
     video_iframe_src_url_1 = models.URLField()
     video_iframe_src_url_2 = models.URLField()
     video_iframe_src_url_3 = models.URLField()
+    video_iframe_src_url_4 = models.URLField()
+    content_button = models.CharField(max_length=100, blank=True)
+    button = models.CharField(max_length=50, blank=True)
 
 
 class Trainer(BasicModel):
