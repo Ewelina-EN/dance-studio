@@ -35,11 +35,8 @@
     <main>
         <!-- main video -->
         <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
-            <source src="{% static 'website/media/videos/web-head.m4v' %}" type="video/mp4">
-            <!-- TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster
-            Load video:
-            https://stackoverflow.com/questions/75295842/provide-a-different-video-depending-on-the-screen-size-html
-            https://codepen.io/fuzzywalrus/pen/jgLWzN/x -->
+            <source src="{% static 'website/media/videos/web-head2.m4v' %}" type="video/mp4">
+            <!-- TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster-->
         </video>
         <!-- header content section -->
         <section class='main-header'>
@@ -49,10 +46,10 @@
             {% endfor %}
         </section>
 
-        <hr class='line'>
+        <hr class='line' id='offer'>
         <!-- offer section -->
-        <section class='offer' id='offer'>
-            <h1>ZAJĘCIA</h1>
+        <section class='offer'>
+            <h1 id='offer'>ZAJĘCIA</h1>
             <ul>
                 {% for offer in offers %}
                 <li>
@@ -75,19 +72,20 @@
             <p>{{blockWithVideo.content_extended}}</p>
             <div class='videos_box'>
                 <div>
-                    <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" frameborder="0"
+                    <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" loading="lazy" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
-                <div><iframe src="{{blockWithVideo.video_iframe_src_url_2}}" frameborder="0"
+                <div><iframe src="{{blockWithVideo.video_iframe_src_url_2}}" loading="lazy" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
-                <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" frameborder="0"
+                <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" loading="lazy" frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
                         allowfullscreen></iframe>
                 </div>
-                <div><iframe src="{{blockWithVideo.video_iframe_src_url_4}}" frameborder="0"
+                <div class='last-video'><iframe src="{{blockWithVideo.video_iframe_src_url_4}}" loading="lazy"
+                        frameborder="0"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
@@ -100,8 +98,8 @@
         {% if forloop.counter0 == 0 %}
 
         <img class='photo' src="{% static 'website/media/gallery/photo.JPG' %}" alt='chernika photo'>
-
-        <section class='offer' id='instructors'>
+        <hr class='line' id='instructors'>
+        <section class='offer'>
             <h1>TRENERKI</h1>
             <ul>
                 {% for trainer in trainers %}
@@ -120,9 +118,9 @@
         {% endfor %}
 
         <img class='photo' src="{% static 'website/media/gallery/photo2.JPG' %}" alt='chernika photo'>
-
+        <hr class='line' id='schedule'>
         <!--schedule section  -->
-        <section class='schedule' id='schedule'>
+        <section class='schedule'>
             <h1>GRAFIK</h1>
             {% for weekday in weekdays %}
             {% if weekday.schedule_items.count %}
@@ -149,9 +147,9 @@
                     na każdym poziomie umiejętności</p>
             </div>
         </section>
-        <hr class='line'>
+        <hr class='line' id='prices'>
         <!-- prices section -->
-        <section class='prices' id='prices'>
+        <section class='prices'>
             <h1>CENNIK</h1>
             <section class='prices-main'>
                 <ul class='prices-main-list'>
@@ -200,8 +198,8 @@
             <a href="{{contact.instagram}}" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
         </div>
     </main>
-    <footer>
-        <div class='nav-footer' id='contact'>
+    <footer id='contact'>
+        <div class='nav-footer'>
             <div class='footer-logo'>
                 <div class='footer-line'></div>
                 <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt='logo icon'>
