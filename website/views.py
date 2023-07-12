@@ -2,7 +2,17 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import TemplateView
-from .models import Offer, BlockWithVideo, Trainer, Offer, ContactData, PriceList, WeekDay, HeaderContent
+from .models import (
+    Offer,
+    BlockWithVideo,
+    Trainer,
+    Offer,
+    ContactData,
+    PriceList,
+    WeekDay,
+    HeaderContent,
+)
+from .forms import ClientForm
 
 
 class HomeView(TemplateView):
@@ -17,4 +27,5 @@ class HomeView(TemplateView):
         context["contact"] = ContactData.active_objects.first()
         context["weekdays"] = WeekDay.active_objects.all()
         context["header_content"] = HeaderContent.active_objects.all()
+        context["form"] = ClientForm()
         return context

@@ -84,3 +84,21 @@ class ScheduleItem(BasicModel):
 class HeaderContent(BasicModel):
     content = models.CharField(max_length=255)
 
+
+class Client(models.Model):
+    choices = (
+        ("Strip Dance", "Strip Dance"),
+        ("High Heels", "High Heels"),
+        ("Strip Acro", "Strip Acro"),
+        ("Female Dance", "Female Dance"),
+    )
+
+    name = models.CharField("Imię", max_length=255)
+    phone = models.CharField("Numer telefonu", max_length=255)
+    email = models.EmailField("Email", max_length=255)
+    activity = models.CharField("Rodzaj zajęć", choices=choices, max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return f"{self.name} {self.phone} {self.email}"
