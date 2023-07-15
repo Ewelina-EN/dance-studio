@@ -87,6 +87,7 @@ class HeaderContent(BasicModel):
 
 class Client(models.Model):
     choices = (
+        (None, "Wybierz"),
         ("Strip Dance", "Strip Dance"),
         ("High Heels", "High Heels"),
         ("Strip Acro", "Strip Acro"),
