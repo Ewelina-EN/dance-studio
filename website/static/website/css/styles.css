@@ -527,6 +527,7 @@ td {
   border: 1px solid white;
   margin: 50px auto;
   width: 80%;
+  font-family: 'Thasadith', sans-serif;
 }
 
 .form h1 {
@@ -540,7 +541,6 @@ td {
 }
 
 .form ul {
-  font-family: 'Thasadith', sans-serif;
   list-style: none;
 }
 
@@ -550,12 +550,12 @@ td {
   margin: 20px 25px;
 }
 
-.form ul li:nth-child(5) {
+.form ul li:nth-last-child(2) {
   flex-direction: row-reverse;
   margin: 50px 25px;
 }
 
-.form ul li:nth-child(5) label {
+.form ul li:nth-last-child(2) label {
   margin-left: 10px;
 }
 
@@ -571,6 +571,14 @@ td {
 
 .form ul li label a {
   color: white;
+}
+
+.alert {
+ background-color: green;
+ padding: 15px;
+ font-weight: bold;
+ font-size: 20px;
+ text-align: center;
 }
 
 .input-form {

@@ -179,27 +179,18 @@
             <h1>Odbierz darmowe wejście na pierwsze zajęcia</h1><img class='form-img'
                 src="{% static 'website/media/gallery/form.jpg' %}" alt='girls'>
         </div>
-
         <!-- {{form.as_ul}} -->
         <form action="/#contact_form" method="POST">
-            {% if messages %}
-            {% for message in messages %}
-                <div class="text-center alert alert-{{ message.tags }}">
-                    {{ message|safe }}
-                </div>
-            {% endfor %}
-            {% endif %}
-            {% csrf_token %}
             <ul>
+                {% if messages %}
+                {% for message in messages %}
+                <li class="alert alert-{{ message.tags }}">
+                    {{ message|safe }}
+                </li>
+                {% endfor %}
+                {% endif %}
+                {% csrf_token %}
                 {{form.as_ul}}
-                <!-- <li>
-                    <label for="consent" class='checkbox-content'>
-                        <input type="checkbox" id="consent" name="consent" required>
-                        Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a
-                            href='{% url "privacy_policy" %}'>Polityką
-                            prywatności</a>
-                    </label>
-                </li> -->
                 <li><input type="submit" value="WYŚLIJ" class='input-form'></li>
             </ul>
         </form>
