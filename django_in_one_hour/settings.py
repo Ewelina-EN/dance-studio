@@ -64,6 +64,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "auditlog.middleware.AuditlogMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
 ]
 
 AUDITLOG_INCLUDE_ALL_MODELS = True

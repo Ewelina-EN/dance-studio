@@ -15,3 +15,16 @@ const close = () => {
 openMenu.addEventListener("click", show);
 closeMenu.addEventListener("click", close);
 navLinks.forEach((link) => link.addEventListener("click", close));
+
+if (localStorage.getItem("cookiesAccepted") === null) {
+  setTimeout(function () {
+    let cookies = document.querySelector("#cookies");
+    cookies.classList.remove("d-none");
+  });
+}
+
+function closeCookies() {
+  let cookies = document.querySelector("#cookies");
+  cookies.classList.add("d-none");
+  localStorage.setItem("cookiesAccepted", true);
+}
