@@ -9,7 +9,6 @@
     <div class='logo'>
         <a href="https://chernikastudio.pl/"><img src="{% static 'website/media/icons/logo3.jpeg' %}"
                 alt="company logo"></a>
-
     </div>
     <nav class='navigation'>
         <div class='openMenu'><i class='fa fa-bars'></i></div>
@@ -45,7 +44,6 @@
             <p> {{headerContent.content}}</p>
             {% endfor %}
         </section>
-
         <hr class='line' id='offer'>
         <!-- offer section -->
         <section class='offer'>
@@ -193,9 +191,33 @@
             </div>
         </div>
         <!-- short text -->
-        <div class='text-join'>
+        <!-- <div class='text-join'>
             <p>Odkryj przyjemność z tańca</p>
             <a href="{{contact.instagram}}" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
+        </div> -->
+
+        <!-- form section -->
+
+        <div class="form">
+            <div>
+                <h1>Odbierz darmowe wejście na pierwsze zajęcia</h1><img class='form-img'
+                    src="{% static 'website/media/gallery/form.jpg' %}" alt='girls'>
+            </div>
+
+            <!-- {{form.as_ul}} -->
+            <form action="/" method="POST">
+                <ul>
+                    {{form.as_ul}}
+                    <li>
+                        <label for="consent" class='checkbox-content'>
+                            <input type="checkbox" id="consent" name="consent" required>
+                            Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=''>Polityką
+                                prywatności</a>
+                        </label>
+                    </li>
+                    <li><input type="submit" value="WYŚLIJ" class='input-form'></li>
+                </ul>
+            </form>
         </div>
     </main>
     <footer id='contact'>
@@ -238,9 +260,6 @@
                     href="https://akademiait.com.pl/" target="_blank">Jacek</a>
                 Ostańscy</a>
             </p>
-        </div>
-        <div class="form">
-            {{form.as_ul}}
         </div>
     </footer>
     <!-- cookies -->

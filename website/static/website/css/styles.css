@@ -516,6 +516,73 @@ td {
   color: white;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  margin: 50px auto;
+  width: 80%;
+}
+
+.form h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  padding: 40px 10px 30px 10px;
+}
+
+.form-img {
+  display: none;
+}
+
+.form ul {
+  font-family: 'Thasadith', sans-serif;
+  list-style: none;
+}
+
+.form ul li {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 25px;
+}
+
+.form ul li:last-child {
+  margin: 50px 25px;
+}
+
+.form ul li label {
+  font-size: 20px;
+}
+
+.form ul li input,
+.form ul li select {
+  padding: 15px;
+  border: 1px solid white;
+}
+
+.form ul li label a {
+  color: white;
+}
+
+.input-form {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin: 0 auto;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  font-size: 25px;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.input-form:hover {
+  background-color: white;
+  color: black;
+}
+
 .footer-logo {
   display: flex;
   align-items: center;
@@ -603,6 +670,11 @@ td {
 
   .mainMenu li {
     padding: 10px;
+  }
+
+  .form {
+    width: 70%;
+    padding: 50px;
   }
 }
 
@@ -801,6 +873,17 @@ td {
     width: 30%;
   }
 
+  .form {
+    width: 65%;
+    flex-direction: column; 
+    padding: 20px;
+    margin: 50px auto;
+  }
+
+  .form h1 {
+    padding: 20px;
+  }
+
   footer {
     width: 100%;
   }
@@ -966,6 +1049,26 @@ td {
     font-size: 20px;
   }
 
+  .form {
+    width: 80%;
+    flex-direction: row;
+    padding: 50px;
+    margin-bottom: 150px;
+  }
+
+  .form h1 {
+    padding: 0 20px 45px 20px;
+  }
+
+  .form-img {
+    display: block;
+    width: 100%;
+  }
+
+  .form ul {
+    margin-left: 30px;
+  }
+
   .nav-footer {
     justify-content: space-between;
   }
@@ -1001,8 +1104,12 @@ td {
     }
 
     .videos_box {
-    width: 90%;
-  }
+      width: 90%;
+    }
+
+    .form {
+      width: 70%;
+    }
 }
 
 @media (min-width: 1500px) {
@@ -1019,6 +1126,10 @@ td {
 
     .lessons {
       display: flex;
+    }
+
+    .form {
+      width: 55%;
     }
 }
 
@@ -1050,6 +1161,10 @@ td {
 
   .text-join {
     margin: 0 0 100px 0;
+  }
+
+  .form {
+    width: 45%;
   }
 
   .nav-footer {
