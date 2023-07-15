@@ -1,4 +1,4 @@
-django ==4.1.7
+django ==4.1.10
 pillow==9.5.0
 django-auditlog==2.2.2
 sorl-thumbnail==12.9.0
