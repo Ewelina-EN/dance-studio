@@ -657,7 +657,7 @@ td {
   padding: 10px 15px;
 }
 
-.rules {
+.rules-footer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -665,7 +665,7 @@ td {
   font-family: 'Thasadith', sans-serif;
 }
 
-.rules a {
+.rules-footer a {
   font-size: 17px;
   color: white;
   border: none;
@@ -713,6 +713,7 @@ td {
   list-style: none;
   text-align: left;
   font-size: 20px;
+  font-family: 'Thasadith', sans-serif;
 }
 
 /* policy */
