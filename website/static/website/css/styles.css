@@ -64,6 +64,10 @@ header {
   font-family: "Oswald", sans-serif;
 }
 
+header.subpage{
+  position:relative;
+}
+
 .logo img {
   width: 60px;
 }
@@ -646,6 +650,13 @@ td {
 
 .social span a i {
   padding: 10px 15px;
+}
+
+.rules {
+  font-family: 'Thasadith', sans-serif;
+  font-size: 17px;
+  color: white;
+  border: none;
 }
 
 .author {

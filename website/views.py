@@ -29,3 +29,20 @@ class HomeView(TemplateView):
         context["header_content"] = HeaderContent.active_objects.all()
         context["form"] = ClientForm()
         return context
+
+
+class RulesView(TemplateView):
+    template_name = "rules.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["contact"] = ContactData.active_objects.first()
+        return context
+
+class PrivacyPolicyView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["contact"] = ContactData.active_objects.first()
+        return context
+
+    template_name = "privacy-policy.html"

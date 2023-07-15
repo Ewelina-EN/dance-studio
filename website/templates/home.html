@@ -5,272 +5,197 @@
 
 {% block content %}
 <!-- navigation -->
-<header>
-    <div class='logo'>
-        <a href="https://chernikastudio.pl/"><img src="{% static 'website/media/icons/logo3.jpeg' %}"
-                alt="company logo"></a>
-    </div>
-    <nav class='navigation'>
-        <div class='openMenu'><i class='fa fa-bars'></i></div>
-        <ul class='mainMenu'>
-            <li><a href="/" class='link'>HOME</a></li>
-            <li><a href="#offer" class='link'>ZAJĘCIA</a></li>
-            <li><a href="#instructors" class='link'>TRENERKI</a></li>
-            <li><a href="#schedule" class='link'>GRAFIK</a></li>
-            <li><a href="#prices" class='link'>CENNIK</a></li>
-            <li><a href="#contact" class='link'>KONTAKT</a></li>
-            <li>
-                <div class='closeMenu'><i class='fa fa-times'></i></div>
-                <span class='icons'>
-                    <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook'></i></a>
-                    <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
-                </span>
-            </li>
-        </ul>
-    </nav>
-</header>
 
-<body>
-    <main>
-        <!-- main video -->
-        <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
-            <source src="{% static 'website/media/videos/web-head2.m4v' %}" type="video/mp4">
-            <!-- TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster-->
-        </video>
-        <!-- header content section -->
-        <section class='main-header'>
-            <h1>O NAS</h1>
-            {% for headerContent in header_content %}
-            <p> {{headerContent.content}}</p>
-            {% endfor %}
-        </section>
-        <hr class='line' id='offer'>
-        <!-- offer section -->
-        <section class='offer'>
-            <h1 id='offer'>ZAJĘCIA</h1>
-            <ul>
-                {% for offer in offers %}
-                <li>
-                    {% thumbnail offer.photo "200x200" as im %}
-                    <img src="{{im.url}}" alt="{{offer.title}}">
-                    {% endthumbnail %}
-                    <h4>{{offer.title}}</h4>
-                    <p>{{offer.content}}</p>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
-        <hr class='line'>
 
-        <!-- classes video section -->
-        {% for blockWithVideo in blocks_with_video %}
-        <section class='videos' id='videos'>
-            <h1>{{blockWithVideo.title}}</h1>
-            <p>{{blockWithVideo.content}}</p>
-            <p>{{blockWithVideo.content_extended}}</p>
-            <div class='videos_box'>
-                <div>
-                    <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" loading="lazy" frameborder="0"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                </div>
-                <div><iframe src="{{blockWithVideo.video_iframe_src_url_2}}" loading="lazy" frameborder="0"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                </div>
-                <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" loading="lazy" frameborder="0"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-                        allowfullscreen></iframe>
-                </div>
-                <div class='last-video'><iframe src="{{blockWithVideo.video_iframe_src_url_4}}" loading="lazy"
-                        frameborder="0"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class='text'>
-                <p>{{blockWithVideo.content_button}}</p>
-                <a href="https://www.instagram.com/chernika_studio.pl/" target="_blank">{{blockWithVideo.button}}</a>
-            </div>
-        </section>
-        {% if forloop.counter0 == 0 %}
-
-        <img class='photo' src="{% static 'website/media/gallery/photo.JPG' %}" alt='chernika photo'>
-        <hr class='line' id='instructors'>
-        <section class='offer'>
-            <h1>TRENERKI</h1>
-            <ul>
-                {% for trainer in trainers %}
-                <li>
-                    {% thumbnail trainer.photo "200x200" as im %}
-                    <img src="{{im.url}}" alt="{{trainer.title}}">
-                    {% endthumbnail %}
-                    <h4>{{trainer.title}}</h4>
-                    <p>{{trainer.content}}</p>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
-        <hr class='line'>
-        {% endif %}
+<main>
+    <!-- main video -->
+    <video class='header-video' muted='muted' autoplay='autoplay' loop='loop'>
+        <source src="{% static 'website/media/videos/web-head2.m4v' %}" type="video/mp4">
+        <!-- TODO: https://www.w3schools.com/tags/tag_video.asp - preload & poster-->
+    </video>
+    <!-- header content section -->
+    <section class='main-header'>
+        <h1>O NAS</h1>
+        {% for headerContent in header_content %}
+        <p> {{headerContent.content}}</p>
         {% endfor %}
-
-        <img class='photo' src="{% static 'website/media/gallery/photo2.JPG' %}" alt='chernika photo'>
-        <hr class='line' id='schedule'>
-        <!--schedule section  -->
-        <section class='schedule'>
-            <h1>GRAFIK</h1>
-            {% for weekday in weekdays %}
-            {% if weekday.schedule_items.count %}
-            <table class='day'>
-                <thead class='day-name'>
-                    <tr>
-                        <th colspan="3">{{weekday.title}}</th>
-                    </tr>
-                </thead>
-                <tbody class='details'>
-                    {% for item in weekday.schedule_items.all %}
-                    <tr>
-                        <td class='hour'>{{item.start_time|time:"H:i"}} - {{item.end_time|time:"H:i"}}</td>
-                        <td class='workout'>{{item.title}}</td>
-                        <td class='sch-instructor'>{{item.instructor}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            {% endif %}
+    </section>
+    <hr class='line' id='offer'>
+    <!-- offer section -->
+    <section class='offer'>
+        <h1 id='offer'>ZAJĘCIA</h1>
+        <ul>
+            {% for offer in offers %}
+            <li>
+                {% thumbnail offer.photo "200x200" as im %}
+                <img src="{{im.url}}" alt="{{offer.title}}">
+                {% endthumbnail %}
+                <h4>{{offer.title}}</h4>
+                <p>{{offer.content}}</p>
+            </li>
             {% endfor %}
-            <div class='schedule-info'>
-                <p>Beginners - poziom początkujący. <br> Advanced - poziom zaawansowany. <br> Open - zajęcia dla osób,
-                    na każdym poziomie umiejętności</p>
-            </div>
-        </section>
-        <hr class='line' id='prices'>
-        <!-- prices section -->
-        <section class='prices'>
-            <h1>CENNIK</h1>
-            <section class='prices-main'>
-                <ul class='prices-main-list'>
-                    {% for priceList in price_list %}
-                    <li class='prices-list'>
-                        <h2>{{priceList.title}}</h2>
-                        <ul class='prices-info'>
-                            <li>{{priceList.content_1}}</li>
-                            <li>{{priceList.content_2}}</li>
-                            <li>{{priceList.content_3}}</li>
-                            <li>{{priceList.content_4}}</li>
-                        </ul>
-                        <p>{{priceList.price}}</p>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </section>
-        </section>
-        <!-- dance space to rental -->
-        <div class='lessons'>
-            <img class='gym-photo' src="{% static 'website/media/gallery/training-room.jpg' %}" alt='training room'>
+        </ul>
+    </section>
+    <hr class='line'>
+
+    <!-- classes video section -->
+    {% for blockWithVideo in blocks_with_video %}
+    <section class='videos' id='videos'>
+        <h1>{{blockWithVideo.title}}</h1>
+        <p>{{blockWithVideo.content}}</p>
+        <p>{{blockWithVideo.content_extended}}</p>
+        <div class='videos_box'>
             <div>
-                <h2>WYNAJEM SALI</h2>
-                <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
-                    Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
-                    Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy
-                    przestronną
-                    salę z
-                    drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z
-                    profesjonalnym
-                    nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne,
-                    treningi,
-                    próby i
-                    inne.
-                </p>
-                <p>Jeśli szukasz sali, by
-                    poćwiczyć solo lub z partnerem
-                    <a href="mailto:info.chernikastudio@gmail.com" target="_blank"><br><strong>NAPISZ DO
-                            NAS</strong></a> lub <a href="tel:+48790318971" target="_blank"><strong>ZADZWOŃ</strong></a>
-                </p>
+                <iframe src="{{blockWithVideo.video_iframe_src_url_1}}" loading="lazy" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div><iframe src="{{blockWithVideo.video_iframe_src_url_2}}" loading="lazy" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div><iframe src="{{blockWithVideo.video_iframe_src_url_3}}" loading="lazy" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                    allowfullscreen></iframe>
+            </div>
+            <div class='last-video'><iframe src="{{blockWithVideo.video_iframe_src_url_4}}" loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </div>
-        <!-- short text -->
-        <!-- <div class='text-join'>
+        <div class='text'>
+            <p>{{blockWithVideo.content_button}}</p>
+            <a href="https://www.instagram.com/chernika_studio.pl/" target="_blank">{{blockWithVideo.button}}</a>
+        </div>
+    </section>
+    {% if forloop.counter0 == 0 %}
+
+    <img class='photo' src="{% static 'website/media/gallery/photo.JPG' %}" alt='chernika photo'>
+    <hr class='line' id='instructors'>
+    <section class='offer'>
+        <h1>TRENERKI</h1>
+        <ul>
+            {% for trainer in trainers %}
+            <li>
+                {% thumbnail trainer.photo "200x200" as im %}
+                <img src="{{im.url}}" alt="{{trainer.title}}">
+                {% endthumbnail %}
+                <h4>{{trainer.title}}</h4>
+                <p>{{trainer.content}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr class='line'>
+    {% endif %}
+    {% endfor %}
+
+    <img class='photo' src="{% static 'website/media/gallery/photo2.JPG' %}" alt='chernika photo'>
+    <hr class='line' id='schedule'>
+    <!--schedule section  -->
+    <section class='schedule'>
+        <h1>GRAFIK</h1>
+        {% for weekday in weekdays %}
+        {% if weekday.schedule_items.count %}
+        <table class='day'>
+            <thead class='day-name'>
+                <tr>
+                    <th colspan="3">{{weekday.title}}</th>
+                </tr>
+            </thead>
+            <tbody class='details'>
+                {% for item in weekday.schedule_items.all %}
+                <tr>
+                    <td class='hour'>{{item.start_time|time:"H:i"}} - {{item.end_time|time:"H:i"}}</td>
+                    <td class='workout'>{{item.title}}</td>
+                    <td class='sch-instructor'>{{item.instructor}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% endfor %}
+        <div class='schedule-info'>
+            <p>Beginners - poziom początkujący. <br> Advanced - poziom zaawansowany. <br> Open - zajęcia dla osób,
+                na każdym poziomie umiejętności</p>
+        </div>
+    </section>
+    <hr class='line' id='prices'>
+    <!-- prices section -->
+    <section class='prices'>
+        <h1>CENNIK</h1>
+        <section class='prices-main'>
+            <ul class='prices-main-list'>
+                {% for priceList in price_list %}
+                <li class='prices-list'>
+                    <h2>{{priceList.title}}</h2>
+                    <ul class='prices-info'>
+                        <li>{{priceList.content_1}}</li>
+                        <li>{{priceList.content_2}}</li>
+                        <li>{{priceList.content_3}}</li>
+                        <li>{{priceList.content_4}}</li>
+                    </ul>
+                    <p>{{priceList.price}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+    <!-- dance space to rental -->
+    <div class='lessons'>
+        <img class='gym-photo' src="{% static 'website/media/gallery/training-room.jpg' %}" alt='training room'>
+        <div>
+            <h2>WYNAJEM SALI</h2>
+            <p> Informujemy, że istnieje możliwość wynajmu sali. <br>
+                Nasza siedziba mieści się w ścisłym centrum Wrocławia. <br>
+                Studio znajduję się w świetnie skomunikowanej strefie czyli samym Rynku. <br> Proponujemy
+                przestronną
+                salę z
+                drewnianym parkietem na całej powierzchni. <br> W sali lustra są na całej długości wraz z
+                profesjonalnym
+                nagłośnieniem oraz oświetleniem. <br> Proponujemy wynajem na: nagrania, studio fotograficzne,
+                treningi,
+                próby i
+                inne.
+            </p>
+            <p>Jeśli szukasz sali, by
+                poćwiczyć solo lub z partnerem
+                <a href="mailto:info.chernikastudio@gmail.com" target="_blank"><br><strong>NAPISZ DO
+                        NAS</strong></a> lub <a href="tel:+48790318971" target="_blank"><strong>ZADZWOŃ</strong></a>
+            </p>
+        </div>
+    </div>
+    <!-- short text -->
+    <!-- <div class='text-join'>
             <p>Odkryj przyjemność z tańca</p>
             <a href="{{contact.instagram}}" target="_blank" class='join'>DOŁĄCZ DO NAS!</a>
         </div> -->
 
-        <!-- form section -->
+    <!-- form section -->
 
-        <div class="form">
-            <div>
-                <h1>Odbierz darmowe wejście na pierwsze zajęcia</h1><img class='form-img'
-                    src="{% static 'website/media/gallery/form.jpg' %}" alt='girls'>
-            </div>
+    <div class="form">
+        <div>
+            <h1>Odbierz darmowe wejście na pierwsze zajęcia</h1><img class='form-img'
+                src="{% static 'website/media/gallery/form.jpg' %}" alt='girls'>
+        </div>
 
-            <!-- {{form.as_ul}} -->
-            <form action="/" method="POST">
-                <ul>
-                    {{form.as_ul}}
-                    <li>
-                        <label for="consent" class='checkbox-content'>
-                            <input type="checkbox" id="consent" name="consent" required>
-                            Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=''>Polityką
-                                prywatności</a>
-                        </label>
-                    </li>
-                    <li><input type="submit" value="WYŚLIJ" class='input-form'></li>
-                </ul>
-            </form>
-        </div>
-    </main>
-    <footer id='contact'>
-        <div class='nav-footer'>
-            <div class='footer-logo'>
-                <div class='footer-line'></div>
-                <img src="{% static 'website/media/icons/logo3.jpeg' %}" alt='logo icon'>
-                <div class='footer-line'></div>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <h3>Telefon</h3>
-                        <p> <a href="tel:+48790318971">{{contact.phone}}</a></p>
-                    </li>
-                    <li><i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <h3>Adres</h3>
-                        <p>{{contact.address_1}} <br>{{contact.address_2}} </p>
-                    </li>
-                    <li><i class="fa-solid fa-envelope"></i>
-                        <h3>E-mail</h3>
-                        <a href="mailto:info.chernikastudio@gmail.com">info.chernikastudio<br>@gmail.com</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class='social'>
-                <h2>Bądź na bieżąco!</h2>
-                <span class='icons'>
-                    <a href="{{contact.facebook}}" target="_blank"><i class='fa fa-facebook '></i></a>
-                    <a href="{{contact.youtube}}" target="_blank"><i class="fa-brands fa-youtube"
-                            style="color: #ffffff;"></i></a>
-                    <a href="{{contact.instagram}}" target="_blank"><i class='fa fa-instagram'></i></a>
-                </span>
-            </div>
-        </div>
-        <div class='author'>
-            <p>Copyright © {% now "Y"%}
-                by <a href="https://github.com/Ewelina-EN" target="_blank">Ewelina</a> & <a
-                    href="https://akademiait.com.pl/" target="_blank">Jacek</a>
-                Ostańscy</a>
-            </p>
-        </div>
-    </footer>
-    <!-- cookies -->
-    <div id="cookies" class="fixed-bottom d-none">
-        <p>Korzystając z naszej strony internetowej, wyrażasz zgodę na przetwarzanie plików cookie
-            i danych
-            użytkownika zgodnie z <a href=''>Polityką Prywatności</a>. Jeśli nie
-            chcesz, aby Twoje dane były przetwarzane, opuść witrynę</p>
-
-        <button onClick="closeCookies()" class='cookies_btn'>OK</button>
+        <!-- {{form.as_ul}} -->
+        <form action="/" method="POST">
+            <ul>
+                {{form.as_ul}}
+                <li>
+                    <label for="consent" class='checkbox-content'>
+                        <input type="checkbox" id="consent" name="consent" required>
+                        Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a
+                            href='{% url "privacy_policy" %}'>Polityką
+                            prywatności</a>
+                    </label>
+                </li>
+                <li><input type="submit" value="WYŚLIJ" class='input-form'></li>
+            </ul>
+        </form>
     </div>
-</body>
+</main>
 
 {% endblock %}
