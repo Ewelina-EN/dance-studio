@@ -736,6 +736,10 @@ td {
   font-family: 'Thasadith', sans-serif;
 }
 
+.policy a {
+  color: white;
+}
+
 @media (min-width: 400px) {
   .mainMenu {
     height: 60%;
