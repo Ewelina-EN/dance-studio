@@ -97,6 +97,7 @@ class Client(models.Model):
     phone = models.CharField("Numer telefonu", max_length=255)
     email = models.EmailField("Email", max_length=255)
     activity = models.CharField("Rodzaj zajęć", choices=choices, max_length=255)
+    consent = models.BooleanField("Zgoda na przetwarzanie danych")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
