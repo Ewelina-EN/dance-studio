@@ -182,6 +182,7 @@
 
         <!-- {{form.as_ul}} -->
         <form action="/" method="POST">
+            {% csrf_token %}
             <ul>
                 {{form.as_ul}}
                 <!-- <li>

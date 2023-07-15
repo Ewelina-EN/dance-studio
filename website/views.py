@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 from .models import (
     Offer,
     BlockWithVideo,
@@ -15,8 +15,10 @@ from .models import (
 from .forms import ClientForm
 
 
-class HomeView(TemplateView):
+class HomeView(CreateView):
     template_name = "home.html"
+    form_class = ClientForm
+    success_url = "/#form"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,7 +29,6 @@ class HomeView(TemplateView):
         context["contact"] = ContactData.active_objects.first()
         context["weekdays"] = WeekDay.active_objects.all()
         context["header_content"] = HeaderContent.active_objects.all()
-        context["form"] = ClientForm()
         return context
 
 
@@ -38,6 +39,7 @@ class RulesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["contact"] = ContactData.active_objects.first()
         return context
+
 
 class PrivacyPolicyView(TemplateView):
     def get_context_data(self, **kwargs):
