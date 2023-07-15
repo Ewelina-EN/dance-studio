@@ -13,6 +13,7 @@ class ClientForm(forms.ModelForm):
             f"Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href='{link}'>Polityką prywatności</a>"
         )
         self.fields["consent"].label_suffix = ""
+        self.fields["consent"].required = True
 
     class Meta:
         fields = ["name", "phone", "email", "activity", "consent"]
