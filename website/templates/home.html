@@ -173,7 +173,7 @@
         </div> -->
 
     <!-- form section -->
-
+    <div id="contact_form"></div>
     <div class="form">
         <div>
             <h1>Odbierz darmowe wejście na pierwsze zajęcia</h1><img class='form-img'
@@ -181,7 +181,14 @@
         </div>
 
         <!-- {{form.as_ul}} -->
-        <form action="/" method="POST">
+        <form action="/#contact_form" method="POST">
+            {% if messages %}
+            {% for message in messages %}
+                <div class="text-center alert alert-{{ message.tags }}">
+                    {{ message|safe }}
+                </div>
+            {% endfor %}
+            {% endif %}
             {% csrf_token %}
             <ul>
                 {{form.as_ul}}

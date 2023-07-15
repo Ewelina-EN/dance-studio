@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
+from django.contrib.messages.views import SuccessMessageMixin
+
 from django.views.generic import TemplateView, CreateView
 from .models import (
     Offer,
@@ -15,10 +17,11 @@ from .models import (
 from .forms import ClientForm
 
 
-class HomeView(CreateView):
+class HomeView(SuccessMessageMixin, CreateView):
     template_name = "home.html"
     form_class = ClientForm
-    success_url = "/#form"
+    success_url = "/#contact_form"
+    success_message = "Dziękujemy za kontakt. Odezwiemy się wkrótce."
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
