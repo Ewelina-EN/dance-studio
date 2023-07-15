@@ -1169,8 +1169,9 @@ td {
     margin: 20px auto 100px auto;
   }
 
-  .policy p {
+  .policy {
     width: 75%;
+    margin: 0 auto;
   } 
 }
 
@@ -1192,6 +1193,11 @@ td {
     .form {
       width: 70%;
     }
+
+    .policy {
+      width: 65%;
+      margin: 0 auto;
+    } 
 }
 
 @media (min-width: 1500px) {
