@@ -169,7 +169,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 if os.environ.get("IS_PRODUCTION"):
     DEBUG = False
     ALLOWED_HOSTS = [
-        "chernikastudio.pl",
+        "dance-studio.lab.ostanska.com",
     ]
-    MEDIA_URL = "https://media.chernikastudio.pl/media/"
-    STATIC_URL = "https://media.chernikastudio.pl/static/"
+    MEDIA_URL = "https://media.dance-studio.lab.ostanska.com/media/"
+    STATIC_URL = "https://media.dance-studio.lab.ostanska.com/static/"
