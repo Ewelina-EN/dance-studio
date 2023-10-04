@@ -1,128 +1,140 @@
+.fixed-bottom a,
+.form ul li label a,
+.lessons a,
+.policy a,
+body,
+header {
+  color: #fff;
+}
+*,
+.mainMenu li:nth-last-child(-n + 1) {
+  padding: 0;
+}
+.fixed-bottom,
+.mainMenu li span a i,
+.policy h2 {
+  text-align: center;
+}
+.fixed-bottom,
+.main-header {
+  font-family: Thasadith, sans-serif;
+}
+.offer ul,
+.prices-main-list {
+  grid-template-columns: repeat(1, 1fr);
+}
+.mainMenu li a,
+.navigation .logo,
+.prices ul li h2,
+.schedule th {
+  text-transform: uppercase;
+}
+.form ul,
+.mainMenu,
+.offer ul li,
+.prices-info li,
+.prices-list,
+.rules ul li {
+  list-style: none;
+}
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
-
 body {
-  background-color: black;
-  color: white;
+  background-color: #000;
 }
-
-/* cookies */
-
 .fixed-bottom {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1000;
-  background-color: #4D4D4D;
-  font-family: 'Thasadith', sans-serif;
+  background-color: #4d4d4d;
   font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  text-align: center;
 }
-
+.mainMenu,
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #000;
+}
+.d-none,
+.form-img,
+.last-video,
+.mainMenu,
+.ytp-title-link .yt-uix-sessionlink {
+  display: none;
+}
 .fixed-bottom button {
   line-height: 20px;
   border-radius: 3px;
   white-space: nowrap;
   padding: 8px 18px;
   border: none;
-  margin: 20px 10px 10px 10px;
+  margin: 20px 10px 10px;
 }
-
-.fixed-bottom a {
-  color: white;
+.mainMenu li,
+th {
+  padding: 10px;
 }
-
-.d-none{
-   display:none;
-}
-
-/* navigation */
-
 header {
-  background: black;
-  color: rgb(255, 255, 255);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 999;
-  border-bottom: 1px solid white;
-  font-family: "Oswald", sans-serif;
+  border-bottom: 1px solid #fff;
+  font-family: Oswald, sans-serif;
 }
-
-header.subpage{
-  position:relative;
+.offer ul li h4,
+h1 {
+  font-family: "Bebas Neue", sans-serif;
 }
-
+header.subpage {
+  position: relative;
+}
 .logo img {
   width: 60px;
 }
-
 .navigation img {
   height: 90px;
 }
-
 .mainMenu {
   height: 70%;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  left: 0px;
   z-index: 10;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: black;
-  transition: top 1s ease 0s;
-  display: none;
-  list-style: none;
+  transition: top 1s;
 }
-
-.mainMenu li {
-  padding: 10px;
-}
-
-.mainMenu li:nth-last-child(-n + 1) {
-  padding: 0;
-}
-
 .mainMenu li a {
   letter-spacing: 2px;
   text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 20px;
-  transition: 0.2s ease;
+  transition: 0.2s;
   border-bottom: 2px solid transparent;
 }
-
 .navigation .openMenu {
   display: block;
   font-size: 25px;
   margin: 10px;
   cursor: pointer;
 }
-
-.mainMenu .closeMenu,
-.icons i {
+.icons i,
+.mainMenu .closeMenu {
   font-size: 25px;
   cursor: pointer;
 }
-
 .mainMenu .closeMenu {
   display: block;
   position: absolute;
@@ -130,476 +142,376 @@ header.subpage{
   right: 20px;
   margin: 3px 11px;
 }
-
 .mainMenu li:hover {
-  background: none;
-  border-bottom: 2px solid rgb(139, 139, 139);
+  background: 0 0;
+  border-bottom: 2px solid #8b8b8b;
 }
-
 .mainMenu li:hover:nth-last-child(-n + 1) {
   border-bottom: none;
   padding: 0;
 }
-
-.mainMenu li span a i {
-  text-align: center;
-}
-
 .icons i {
   font-size: 25px;
   cursor: pointer;
   padding: 20px;
 }
-
 .navigation .logo {
   margin: 15px;
   cursor: pointer;
-  text-transform: uppercase;
   font-size: 15px;
 }
-
 .line {
   width: 100%;
   height: 1px;
-  background-color: white;
-  margin: 50px 0 0 0;
+  background-color: #fff;
+  margin: 50px 0 0;
 }
-
-/* big video */
 .header-video {
   width: 100%;
-  margin: 85px 0 40px 0;
+  margin: 85px 0 40px;
 }
-
-.main-header {
-  width: 80%;
+.main-header,
+.videos {
   margin: 0 auto;
   text-align: center;
-  font-family: 'Thasadith', sans-serif;
 }
-
+.main-header {
+  width: 80%;
+}
 .main-header h1 {
   padding-top: 0;
   margin-bottom: 10px;
 }
-
 .main-header p {
   margin-bottom: 60px;
   line-height: 25px;
 }
-
 h1 {
   font-size: 35px;
   letter-spacing: 3px;
-  font-family: 'Bebas Neue', sans-serif;
   padding-top: 100px;
 }
-
-.offer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.offer ul {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-bottom: 20px;
-  align-items: center;
-}
-
-.offer ul li {
-  list-style: none;
-  text-align: center;
-  margin: 20px;
-  width: 300px;
-}
-
-.offer ul li img {
-  border-radius: 50%;
-  border: 3px solid rgb(187, 187, 187);
-  width: 90px;
-  margin: 20px 0;
-}
-
-.offer ul li h4 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 25px;
-  letter-spacing: 2px;
-}
-
-.offer ul li p {
-  margin: 10px;
-  color: rgb(184, 184, 184);
-  font-size: 18px;
-  font-family: 'Thasadith', sans-serif;
-}
-
-.videos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-}
-
-.videos div {
-  margin-top: 20px;
-}
-
-.videos p {
-  text-align: center;
-  margin: 0 30px;
-  color: rgb(184, 184, 184);
-  font-size: 18px;
-  font-family: 'Thasadith', sans-serif;
-}
-
-.videos p:nth-child(-n + 2) {
-  margin-top: 20px;
-}
-
-.last-video {
-  display: none;
-}
-
-iframe {
-  width: 250px;
-  height: 470px;
-  border: none;
-  margin: 10px;
-}
-
-.movies {
-  margin: 20px 0;
-}
-
-.photo {
-  max-width: 100%;
-  height: auto;
-}
-
-.text {
-  text-align: center;
-  font-size: 25px;
-  margin: 20px 0 60px 0;
-}
-
-.text p {
-  text-align: center;
-  margin: 30px 20px;
-  color: rgb(184, 184, 184);
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-family: 'Thasadith', sans-serif;
-}
-
-.text a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  border: 1px solid white;
-  padding: 10px 15px;
-  margin: 0 50px;
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
-}
-
-.join {
-  width: 60%;
-}
-
-.text a:hover {
-  background-color: white;
-  color: black;
-}
-
-.text-join {
-  text-align: center;
-  font-size: 25px;
-  margin: 60px 0;
-}
-
-.text-join p {
-  text-align: center;
-  margin: 10px 30px 20px 30px;
-  color: rgb(184, 184, 184);
-  font-family: 'Thasadith', sans-serif;
-  font-size: 25px;
-}
-
-.text-join a {
-  width: 60%;
-  display: block;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  border: 1px solid white;
-  padding: 10px 15px;
-  margin: 0 auto;
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.text-join a:hover {
-  background-color: white;
-  color: black;
-}
-
-.schedule {
-  width: 85%;
-  margin: 0 auto;
-}
-
-.schedule h1 {
-  text-align: center;
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.schedule table {
-  width: 100%;
-  border: 1px solid rgb(139, 139, 139);
-}
-
-.day {
-  margin-top: 20px;
-}
-
-th {
-  padding: 10px;
-  border-bottom: 1px solid rgb(139, 139, 139);
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-td {
-  padding: 10px 15px;
-}
-
-.schedule th {
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-}
-
-.workout {
-  margin-left: 30px;
-  font-family: 'Thasadith', sans-serif;
-}
-
-.sch-instructor {
-  text-align: right;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-.schedule-info p {
-  margin: 25px 0;
-  font-family: 'Thasadith', sans-serif;
-}
-
-.hour {
-  width: 80px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-}
-
+.offer,
 .prices {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+.offer ul {
+  display: grid;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.offer ul li {
+  text-align: center;
+  margin: 20px;
+  width: 300px;
+}
+.offer ul li img {
+  border-radius: 50%;
+  border: 3px solid #bbb;
+  width: 90px;
+  margin: 20px 0;
+}
+.text a,
+.text-join a {
+  display: block;
+  border: 1px solid #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.offer ul li p,
+iframe {
+  margin: 10px;
+}
+.offer ul li h4 {
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+.offer ul li p,
+.text p,
+.videos p {
+  color: #b8b8b8;
+  font-size: 18px;
+  font-family: Thasadith, sans-serif;
+}
+.author,
+.input-form,
+.prices ul li h2,
+.sch-instructor,
+.schedule th,
+.text a,
+.text p {
+  letter-spacing: 1px;
+}
+.videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.day,
+.videos div,
+.videos p:nth-child(-n + 2) {
+  margin-top: 20px;
+}
+.videos p {
+  text-align: center;
+  margin: 0 30px;
+}
+iframe {
+  width: 250px;
+  height: 470px;
+  border: none;
+}
+.movies {
+  margin: 20px 0;
+}
+.photo {
+  max-width: 100%;
+  height: auto;
+}
+.text {
+  text-align: center;
+  font-size: 25px;
+  margin: 20px 0 60px;
+}
+.text p {
+  text-align: center;
+  margin: 30px 20px;
+}
+.text-join,
+.text-join p {
+  font-size: 25px;
+  text-align: center;
+}
+.text a {
+  color: #fff;
+  margin: 0 50px;
+  font-family: "Bebas Neue", sans-serif;
+}
+.join {
+  width: 60%;
+}
+.input-form:hover,
+.text a:hover,
+.text-join a:hover {
+  background-color: #fff;
+  color: #000;
+}
+.text-join {
+  margin: 60px 0;
+}
+.text-join p {
+  margin: 10px 30px 20px;
+  color: #b8b8b8;
+  font-family: Thasadith, sans-serif;
+}
+.schedule h1,
+.schedule th,
+.text-join a,
+th {
+  font-family: "Bebas Neue", sans-serif;
+}
+.text-join a {
+  width: 60%;
+  color: #fff;
+  margin: 0 auto;
+}
+.schedule {
+  width: 85%;
+  margin: 0 auto;
+}
+.schedule h1 {
+  text-align: center;
+}
+.schedule table {
+  width: 100%;
+  border: 1px solid #8b8b8b;
+}
+th {
+  border-bottom: 1px solid #8b8b8b;
+}
+.social span a i,
+td {
+  padding: 10px 15px;
+}
+.schedule th {
+  text-align: left;
+  font-size: 20px;
+}
+.schedule-info p,
+.workout {
+  font-family: Thasadith, sans-serif;
+}
+.workout {
+  margin-left: 30px;
+}
+.sch-instructor {
+  text-align: right;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+}
+.alert,
+.author,
+.form h1,
+.lessons div,
+.nav-footer ul li,
+.prices-info li,
+.prices-list,
+.rules,
+.social {
+  text-align: center;
+}
+.schedule-info p {
+  margin: 25px 0;
+}
+.hour,
+.lessons h2,
+.prices ul li h2,
+.prices-list p {
+  font-family: "Bebas Neue", sans-serif;
+}
+.hour {
+  width: 80px;
+  font-size: 20px;
+}
+.form,
+.lessons,
+.prices-info {
+  font-family: Thasadith, sans-serif;
+}
 .prices-main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.form,
+.prices-list {
+  flex-direction: column;
+}
 .prices-main-list {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
   margin-top: 20px;
 }
-
 .prices-list {
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  list-style: none;
-  border: 1px solid rgb(184, 184, 184);
+  border: 1px solid #b8b8b8;
   margin: 10px 0;
   min-height: 350px;
-  text-align: center;
 }
-
+.form,
+.input-form {
+  border: 1px solid #fff;
+}
 .prices-list:hover {
-  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 1);
+  box-shadow: 0 0 8px 0 #fff;
 }
-
 .prices ul li h2 {
-  text-transform: uppercase;
   width: 250px;
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
   font-size: 27px;
 }
-
+.alert,
+.form ul li label {
+  font-size: 20px;
+}
 .prices-info {
   margin: 0 10px;
-  font-family: 'Thasadith', sans-serif;
 }
-
 .prices-info li {
-  list-style: none;
   margin-top: 10px;
-  color: rgb(184, 184, 184);
-  text-align: center;
+  color: #b8b8b8;
 }
-
 .prices-list p {
   font-size: 35px;
-  font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 2px;
 }
-
 .prices-list .prices-list-text {
-  color: rgb(184, 184, 184);
+  color: #b8b8b8;
   text-align: center;
   font-size: 15px;
   margin: 0 20px;
 }
-
 .lessons {
   display: inline-block;
   position: relative;
-  margin: 40px 0 0 0;
-  font-family: 'Thasadith', sans-serif;
+  margin: 40px 0 0;
 }
-
 .gym-photo {
   max-width: 100%;
   height: 540px;
   display: block;
 }
-
 .lessons div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   width: 100%;
   padding: 0 20px;
 }
-
 .lessons h2 {
   margin-bottom: 25px;
-  font-family: 'Bebas Neue', sans-serif;
 }
-
 .lessons p {
   font-weight: 200;
   font-size: 17px;
-  color: rgb(184, 184, 184);
+  color: #b8b8b8;
 }
-
 .lessons p:last-child {
-  color: white;
+  color: #fff;
   font-size: 20px;
-  margin: 25px 0 0 0;
+  margin: 25px 0 0;
 }
-
-.lessons a {
-  color: white;
-}
-
 .form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border: 1px solid white;
   margin: 50px auto;
   width: 80%;
-  font-family: 'Thasadith', sans-serif;
 }
-
+.form h1,
+.input-form,
+.nav-footer h3 {
+  font-family: "Bebas Neue", sans-serif;
+}
 .form h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  text-align: center;
-  padding: 40px 10px 30px 10px;
+  padding: 40px 10px 30px;
 }
-
-.form-img {
-  display: none;
-}
-
-.form ul {
-  list-style: none;
-}
-
 .form ul li {
   display: flex;
   flex-direction: column;
   margin: 20px 25px;
 }
-
 .form ul li:nth-last-child(2) {
   flex-direction: row-reverse;
   margin: 50px 25px;
 }
-
 .form ul li:nth-last-child(2) label {
   margin-left: 10px;
 }
-
-.form ul li label {
-  font-size: 20px;
-}
-
 .form ul li input,
 .form ul li select {
   padding: 15px;
-  border: 1px solid white;
+  border: 1px solid #fff;
 }
-
-.form ul li label a {
-  color: white;
-}
-
 .alert {
- background-color: green;
- padding: 15px;
- font-weight: bold;
- font-size: 20px;
- text-align: center;
+  background-color: green;
+  padding: 15px;
+  font-weight: 700;
 }
-
 .input-form {
-  background-color: black;
-  color: white;
+  background-color: #000;
+  color: #fff;
   cursor: pointer;
-  border: 1px solid white;
   padding: 10px 15px;
   margin: 0 auto;
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
   font-size: 25px;
-  border: 1px solid white;
   width: 100%;
 }
-
-.input-form:hover {
-  background-color: white;
-  color: black;
-}
-
 .footer-logo {
   display: flex;
   align-items: center;
@@ -607,19 +519,16 @@ td {
   width: 100%;
   padding-top: 65px;
 }
-
 .footer-line {
   flex-grow: 1;
   height: 1px;
-  background-color: white;
+  background-color: #fff;
 }
-
 .footer-logo img {
   width: 85px;
   height: 85px;
   margin: 0 15px;
 }
-
 .nav-footer {
   display: flex;
   flex-direction: column;
@@ -627,184 +536,141 @@ td {
   justify-content: center;
   margin-bottom: 50px;
 }
-
 .nav-footer ul li {
   list-style: none;
-  text-align: center;
   margin: 20px 0;
 }
-
 .nav-footer h3 {
   letter-spacing: 0.5px;
   margin: 5px 0;
-  font-family: 'Bebas Neue', sans-serif;
 }
-
+.author,
+.nav-footer a,
+.nav-footer p,
+.rules-footer {
+  font-family: Thasadith, sans-serif;
+}
 .nav-footer a {
   text-decoration: none;
-  color: white;
-  font-family: 'Thasadith', sans-serif;
+  color: #fff;
 }
-
-.nav-footer p {
-  font-family: 'Thasadith', sans-serif;
+.policy h2,
+.rules h2,
+.social h2 {
+  font-family: "Bebas Neue", sans-serif;
 }
-
 .social {
-  text-align: center;
   margin-top: 15px;
   cursor: pointer;
 }
-
 .social h2 {
   margin: 20px 0;
-  font-family: 'Bebas Neue', sans-serif;
 }
-
-.social span a i {
-  padding: 10px 15px;
-}
-
 .rules-footer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  font-family: 'Thasadith', sans-serif;
 }
-
 .rules-footer a {
   font-size: 17px;
-  color: white;
+  color: #fff;
   border: none;
 }
-
 .author {
   font-size: 10px;
   font-weight: 200;
-  letter-spacing: 1px;
-  margin: 50px 0 10px 0;
-  text-align: center;
-  font-family: 'Thasadith', sans-serif;
+  margin: 50px 0 10px;
 }
-
 .author a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
-
-/* rules&privacy policy */
-
 .rules {
   display: block;
-  text-align: center;
 }
-
-.rules h1,
-.policy h1 {
+.policy h1,
+.rules h1 {
   padding-top: 50px;
 }
-
-.rules h2,
-.policy h2 {
+.policy h2,
+.rules h2 {
   width: 75%;
   letter-spacing: 3px;
-  font-family: 'Bebas Neue', sans-serif;
   padding-top: 50px;
   margin: 20px auto;
 }
-
+.policy p,
+.rules ul li {
+  font-size: 20px;
+  font-family: Thasadith, sans-serif;
+}
 .rules ul li {
   width: 75%;
   margin: 15px auto;
-  list-style: none;
   text-align: left;
-  font-size: 20px;
-  font-family: 'Thasadith', sans-serif;
 }
-
-/* policy */
-
 .policy {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-.policy h2 {
-  text-align: center;
-}
-
 .policy p {
   width: 85%;
   margin: 20px 10px;
-  font-size: 20px;
-  font-family: 'Thasadith', sans-serif;
 }
-
-.policy a {
-  color: white;
-}
-
 @media (min-width: 400px) {
   .mainMenu {
     height: 60%;
   }
-
   .mainMenu li {
     padding: 10px;
   }
-
   .form {
     width: 70%;
     padding: 50px;
   }
 }
-
 @media (min-width: 700px) {
+  .main-header,
+  .offer h4,
+  .videos p {
+    font-size: 20px;
+  }
   .fixed-bottom {
     flex-direction: row;
   }
-
-  .fixed-bottom button{
+  .fixed-bottom button {
     margin: 0 0 0 30px;
   }
-
   .logo img {
     width: 80px;
+    margin: 10px 0;
   }
-
+  .offer ul,
+  .schedule-info p:last-child {
+    margin-bottom: 0;
+  }
   h1 {
     font-size: 40px;
     padding: 0;
   }
-
   .line {
     margin: 110px 0;
   }
-
+  .navigation .mainMenu .closeMenu,
   .navigation .openMenu {
     display: none;
   }
-  .navigation .mainMenu .closeMenu {
-    display: none;
-  }
-
   header {
     padding: 0 30px;
   }
-
-  .logo img {
-    margin: 10px 0;
-  }
-
   .navigation {
     margin: 0;
     padding: 0;
   }
-
   .navigation .mainMenu {
     display: flex;
     height: auto;
@@ -813,109 +679,78 @@ td {
     justify-content: right;
     align-items: center;
   }
-
   .navigation .mainMenu li a {
     letter-spacing: 1px;
     font-size: 20px;
   }
-
   .fa {
     padding: 0 10px;
   }
-
+  .offer h1,
+  .text {
+    padding: 0;
+  }
   .header-video {
     margin-top: 105px;
   }
-
   .main-header {
     width: 70%;
-    font-size: 20px;
   }
-
   .offer {
     width: 100%;
     margin-bottom: 30px;
   }
-
-  .offer h1 {
-    padding: 0;
-  }
-
-  .offer h4 {
-    font-size: 20px;
-  }
-
   .offer ul {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 0;
   }
-
   .offer ul li p {
     margin: 10px 15px;
     font-size: 17px;
   }
-
   .videos h1 {
     margin-bottom: 15px;
   }
-
-  .videos p {
-    font-size: 20px;
-  }
-
   .videos_box {
     display: flex;
     flex-direction: row;
   }
-
   iframe {
     width: 220px;
   }
-
   .photo {
     margin: 50px 0;
   }
-
   .text {
     margin: 0;
     width: 100%;
-    padding: 0;
   }
-
+  .prices,
+  .schedule,
+  .text a {
+    margin: 0 auto;
+  }
   .text p {
     font-size: 22px;
     letter-spacing: 0;
   }
-
   .text a {
     width: 40%;
     font-size: 25px;
     padding: 20px 25px;
-    margin: 0 auto;
   }
-
   .schedule {
     width: 80%;
-    margin: 0 auto;
   }
-
-  .schedule-info p:last-child {
-    margin-bottom: 0;
-  }
-
   .hour {
     width: 140px;
   }
-
   .prices {
     width: 90%;
-    margin: 0 auto;
   }
-
-  .prices-main {
+  .prices-main,
+  footer {
     width: 100%;
   }
-
   .prices-main-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -924,66 +759,49 @@ td {
     margin-top: 20px;
     width: 100%;
   }
-
   .prices-list {
     margin: 0;
   }
-
-   .prices ul li h2 {
+  .prices ul li h2 {
     width: auto;
     margin: 0 15px;
   }
-
   .gym-photo {
     height: 350px;
   }
-
   .lessons {
-    margin: 50px auto 0 auto;
+    margin: 50px auto 0;
   }
-
   .lessons p {
     font-size: 18px;
   }
-
   .lessons p:last-child {
-    margin: 25px 0 0 0;
+    margin: 25px 0 0;
   }
-
   .lessons div {
     padding: 10px;
   }
-
-  .text-join a {
-    width: 30%;
-  }
-
-  .form {
-    width: 65%;
-    flex-direction: column; 
-    padding: 20px;
-    margin: 50px auto;
-  }
-
+  .form,
   .form h1 {
     padding: 20px;
   }
-
-  footer {
-    width: 100%;
+  .text-join a {
+    width: 30%;
   }
-
+  .form {
+    width: 65%;
+    flex-direction: column;
+    margin: 50px auto;
+  }
   .nav-footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
-
   .nav-footer nav {
     width: 80%;
   }
-
   .nav-footer nav ul {
     display: flex;
     flex-direction: row;
@@ -992,29 +810,23 @@ td {
     width: 100%;
     margin: 50px 0;
   }
-
   .nav-footer nav ul li:nth-child(2) {
     margin-left: 45px;
   }
-
   .footer-logo {
     padding-top: 0;
   }
-
   .footer-logo img {
     width: 110px;
     height: 110px;
     margin: 0 25px;
   }
-
   .social span {
     width: 35%;
   }
-
   .social h2 {
     margin-bottom: 30px;
   }
-
   .icons {
     display: flex;
     flex-direction: row;
@@ -1022,102 +834,82 @@ td {
     width: 40%;
     margin: 0 auto;
   }
-
   .icons i {
     font-size: 30px;
   }
-
   .social {
     margin: 0;
     width: 100%;
   }
-
   .social img {
     margin: 10px;
   }
 }
-
-@media (max-width: 700px){
+@media (max-width: 700px) {
   .main-header {
     width: 70%;
   }
 }
-
-@media (min-width: 820px){
+@media (min-width: 820px) {
   .nav-footer nav {
     width: 60%;
   }
-
   .main-header p {
     line-height: 35px;
   }
-
   .gym-photo {
     height: auto;
   }
 }
-
 @media (min-width: 1200px) {
   .line {
     margin: 165px 0;
   }
-
   .mainMenu li {
     padding: 0 10px;
   }
-
   .main-header {
-    margin: 50px auto 100px auto;
+    margin: 50px auto 100px;
     font-size: 21px;
   }
-
   .main-header p {
     width: 850px;
     margin: 0 auto;
     line-height: 35px;
   }
-
-  .offer {
+  .offer,
+  .policy {
     width: 75%;
     margin: 0 auto;
   }
-
   .offer h1 {
     padding: 0;
   }
-
   iframe {
     width: 260px;
   }
-
   .videos_box {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
   }
-
-   .last-video {
+  .last-video {
     display: block;
   }
-
   .text a {
     width: 35%;
   }
-
   .text-join a {
     width: 18%;
   }
-
   .schedule {
     width: 50%;
     margin: 0 auto;
   }
-
   .prices-main {
     width: 65%;
   }
-
   .prices-main-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1125,39 +917,33 @@ td {
     grid-row-gap: 20px;
     margin-top: 20px;
   }
-
   .lessons h2 {
     font-size: 40px;
   }
-
-  .lessons p {
+  .lessons p,
+  .nav-footer nav ul li a,
+  .nav-footer nav ul li p {
     font-size: 20px;
   }
-
   .form {
     width: 80%;
     flex-direction: row;
     padding: 50px;
     margin-bottom: 150px;
   }
-
   .form h1 {
-    padding: 0 20px 45px 20px;
+    padding: 0 20px 45px;
   }
-
   .form-img {
     display: block;
     width: 100%;
   }
-
   .form ul {
     margin-left: 30px;
   }
-
   .nav-footer {
     justify-content: space-between;
   }
-
   .nav-footer ul {
     width: 700px;
     display: flex;
@@ -1165,128 +951,88 @@ td {
     align-items: center;
     justify-content: space-evenly;
   }
-
   .nav-footer h3 {
     margin-bottom: 20px;
     font-size: 25px;
   }
-
-  .nav-footer nav ul li p,
-  .nav-footer nav ul li a {
-    font-size: 20px;
-  }
-
   .rules {
     width: 75%;
-    margin: 20px auto 100px auto;
+    margin: 20px auto 100px;
   }
-
-  .policy {
-    width: 75%;
-    margin: 0 auto;
-  } 
 }
-
-
 @media (min-width: 1300px) {
-    .offer ul {
-      grid-template-columns: repeat(4, 1fr);
-      margin-bottom: 0;
-    }
-
-    .text a {
-      width: 25%;
-    }
-
-    .videos_box {
-      width: 90%;
-    }
-
-    .form {
-      width: 70%;
-    }
-
-    .policy {
-      width: 65%;
-      margin: 0 auto;
-    } 
+  .offer ul {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 0;
+  }
+  .text a {
+    width: 25%;
+  }
+  .videos_box {
+    width: 90%;
+  }
+  .form {
+    width: 70%;
+  }
+  .policy {
+    width: 65%;
+    margin: 0 auto;
+  }
 }
-
 @media (min-width: 1500px) {
-    .photo,
-    .gym-photo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      width: 1500px;
-      height: auto;
-      margin: 165px auto;
-    }
-
-    .lessons {
-      display: flex;
-    }
-
-    .form {
-      width: 55%;
-    }
+  .gym-photo,
+  .photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1500px;
+    height: auto;
+    margin: 165px auto;
+  }
+  .lessons {
+    display: flex;
+  }
+  .form {
+    width: 55%;
+  }
 }
-
 @media (min-width: 1700px) {
+  .form,
   .main-header {
     width: 45%;
   }
-
   .videos {
     width: 60%;
   }
-
   .text-join a {
     width: 10%;
   }
-  
   .schedule {
     width: 40%;
     margin: 0 auto;
   }
-
   .prices {
     width: 80%;
   }
-
   .prices-main {
     width: 50%;
   }
-
   .text-join {
-    margin: 0 0 100px 0;
+    margin: 0 0 100px;
   }
-
-  .form {
-    width: 45%;
-  }
-
   .nav-footer {
     justify-content: space-between;
   }
-
   .footer-logo img {
     width: 150px;
     height: 150px;
   }
-
   .nav-footer nav {
     margin: 40px 0;
   }
-
   .nav-footer nav ul {
     width: 80%;
     margin: 0 auto;
   }
-}
-
-.ytp-title-link 
-.yt-uix-sessionlink {
-  display: none;
 }
