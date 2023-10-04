@@ -1,5 +1,5 @@
 """
-ASGI config for django_in_one_hour project.
+ASGI config for dance_studio project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_in_one_hour.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dance_studio.settings")
 
 application = get_asgi_application()
