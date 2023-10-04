@@ -1,23 +1,30 @@
-# django-w-godzine
-Projekt to webinaru  "Django w godzinę" przeprowadzonego w ramach [akakademiait.com.pl](https://akakademiait.com.pl)
-Komendy:
-PIPENV_VENV_IN_PROJECT=1   pipenv install
-pipenv install django
-pipenv shell
-django-admin startproject django_in_one_hour
-python manage.py startapp notes
-python manage.py makemigrations
-python manage.py migrate
+# Chernika Dance Studio - Project Website
 
-https://tinyurl.com/django-ankieta
+[Live version: https://dance-studio.lab.ostanska.com/ ](https://dance-studio.lab.ostanska.com/)
 
-# Aktualizacja strony
+## Project Description
 
-git pull
-pipenv install
-./manage.py migrate
-./manage.py createsuperuser # to tworrzy admina, zada pytania. Haslo jest generalnie dowolne, nie musi byc silne, bo tylko lokalnie.
-./manage.py runserver
+The Chernika Dance Studio project is a website for the first Strip Dance school in Poland. This website allows users to explore class offerings, instructors, class schedules, pricing, and contact information for the school. The site also includes sections with videos showcasing classes.
 
-Dokumentacja templatów:
-https://docs.djangoproject.com/en/4.2/ref/templates/language/
+**Please Note**: The live version of this website is hosted but is not the official website of the company. The project is currently being continued by another individual.
+
+
+## Technologies
+
+The project was built using the following technologies:
+
+- HTML5 and CSS3 for structuring and styling the website.
+- JavaScript for interactive elements and functionality.
+- Django as the web framework for handling server-side logic.
+- SQLite for the database.
+- FontAwesome for icons.
+
+## Project Structure
+
+The project is divided into several applications, each responsible for a different part of the website. Here is a list of the main applications:
+
+- `website`: Contains the main views and templates for the website.
+- `contact`: Handles the school's contact data.
+- `schedule`: Manages the class schedule.
+- `trainers`: Contains information about the instructors.
+- `clients`: Manages the contact form functionality.
