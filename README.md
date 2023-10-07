@@ -16,12 +16,11 @@ The project was built using the following technologies:
 - HTML5 and CSS3 for structuring and styling the website.
 - JavaScript for interactive elements and functionality.
 - Django as the web framework for handling server-side logic.
-- SQLite for the database.
 - FontAwesome for icons.
 
 ## Project Structure
 
-The project is divided into several applications, each responsible for a different part of the website. Here is a list of the main applications:
+The project is divided into several parts, each responsible for a different section of the website. Here is a list of the main applications:
 
 - `website`: Contains the main views and templates for the website.
 - `contact`: Handles the school's contact data.
